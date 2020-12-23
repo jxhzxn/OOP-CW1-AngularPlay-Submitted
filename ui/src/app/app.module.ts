@@ -9,6 +9,9 @@ import { RouteExampleComponent } from './route-example/route-example.component';
 import { AppService } from './app.service';
 import { AppHttpInterceptorService } from './http-interceptor.service';
 import {FormsModule} from "@angular/forms";
+import { NavbarComponent } from './navbar/navbar.component';
+import { PointsTableComponent } from './points-table/points-table.component';
+import { CreateClubComponent } from './create-club/create-club.component';
 
 const routes: Routes = [
   {
@@ -30,13 +33,18 @@ const routes: Routes = [
     path: '**',
     redirectTo: '/play',
     pathMatch: 'full'
-  }
+  },
+  { path:'', component: PointsTableComponent },
+  { path:'createClub', component: CreateClubComponent }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    RouteExampleComponent
+    RouteExampleComponent,
+    NavbarComponent,
+    PointsTableComponent,
+    CreateClubComponent
   ],
   imports: [
     BrowserModule,

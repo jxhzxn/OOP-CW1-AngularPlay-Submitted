@@ -1,0 +1,14 @@
+header{
+  background-color: #ffb844;
+  padding: 15px;
+}
+
+a{
+  color: white;
+  text-decoration: none;
+  padding: 15px;
+}
+
+a:hover{
+  background-color: #ffa200;
+}
