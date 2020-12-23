@@ -1,0 +1,25 @@
+.form-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.item{
+  margin: 10px;
+}
+
+.createBtn{
+  margin: 10px;
+  background-color: #ffa200;
+  border: none;
+  width: 120px;
+  height: 30px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.createBtn:hover{
+  background-color: #d08800;
+  cursor: pointer;
+}

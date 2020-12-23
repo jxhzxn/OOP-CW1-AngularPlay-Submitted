@@ -1,14 +1,32 @@
 header{
   background-color: #ffb844;
-  padding: 15px;
+  /*padding: 15px;*/
 }
 
 a{
   color: white;
   text-decoration: none;
   padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 a:hover{
   background-color: #ffa200;
+}
+
+.nav-items{
+  display: flex;
+}
+
+.title{
+  margin-left: 600px;
+  /*border-color: black;*/
+  /*border-style: solid;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
 }
