@@ -14,6 +14,8 @@ import { PointsTableComponent } from './points-table/points-table.component';
 import { CreateClubComponent } from './create-club/create-club.component';
 
 const routes: Routes = [
+  { path:'', component: PointsTableComponent },
+  { path:'createClub', component: CreateClubComponent },
   {
     path: 'java',
     component: RouteExampleComponent,
@@ -33,9 +35,7 @@ const routes: Routes = [
     path: '**',
     redirectTo: '/play',
     pathMatch: 'full'
-  },
-  { path:'', component: PointsTableComponent },
-  { path:'createClub', component: CreateClubComponent }
+  }
 ];
 
 @NgModule({
@@ -63,6 +63,9 @@ const routes: Routes = [
       provide: HTTP_INTERCEPTORS,
       useClass: AppHttpInterceptorService
     }
+  ],
+  exports: [
+    RouterModule
   ],
   bootstrap: [AppComponent]
 })
