@@ -16,7 +16,7 @@ export class AppService {
   private dataPostTestUrl = '/api/postTest';
   private createUrl = '/api/createPerson/';
   private getNofClubsUrl = '/api/getNofClubs';
-  private getClubUrl = '/club/getClub';
+  private getClubUrl = '/footballClubs';
 
   constructor(private http: HttpClient) {
   }
@@ -39,7 +39,7 @@ export class AppService {
     return this.http.post(this.dataPostTestUrl, {});
   }
 
-  public createPerson(clubName:string,location:string,homeGround:string) : Observable<any> {
+  public createClub(clubName:string, location:string, homeGround:string) : Observable<any> {
     let url = this.createUrl+clubName+'/'+location+'/'+homeGround;
     return this.http.post(url,{});
   }

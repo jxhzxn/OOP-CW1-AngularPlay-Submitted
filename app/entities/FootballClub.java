@@ -94,9 +94,6 @@ public class FootballClub extends SportsClub implements Serializable {
         this.nofMatches = nofMatches;
     }
 
-    public String getInfo(){
-        return "ClubName: "+this.getClubName()+". Location: "+this.getLocation()+". HomeGround: "+this.getHomeGround();
-    }
 
     @Override
     public boolean equals(Object o) {

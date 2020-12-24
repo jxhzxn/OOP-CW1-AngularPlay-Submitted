@@ -31,7 +31,7 @@ export class AppComponent{
   }
 
   public createPerson(): void{
-    this.appService.createPerson(this.clubName,this.location,this.homeGround).subscribe((data: any) => {
+    this.appService.createClub(this.clubName,this.location,this.homeGround).subscribe((data: any) => {
       this.postRequestResponse = data.content;
     })
   }

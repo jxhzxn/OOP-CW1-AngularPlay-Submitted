@@ -31,9 +31,14 @@ export class CreateClubComponent{
   }
 
   public createPerson(): void{
-    this.appService.createPerson(this.clubName,this.location,this.homeGround).subscribe((data: any) => {
-      this.postRequestResponse = data.content;
-    })
+    if(this.clubName!=null && this.location!=null && this.homeGround!=null){
+      this.appService.createClub(this.clubName,this.location,this.homeGround).subscribe((data: any) => {
+        this.postRequestResponse = data.content;
+      })
+    }else{
+      alert("All the Fields Should be Filled");
+    }
+
   }
 
   public getNofClubs(): void{
