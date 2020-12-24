@@ -13,6 +13,7 @@ export class CreateClubComponent{
   clubName: string;
   location: string;
   homeGround: string;
+  nofClubs: string;
 
   constructor(private appService: AppService) {
     this.appService.getWelcomeMessage().subscribe((data: any) => {
@@ -32,6 +33,12 @@ export class CreateClubComponent{
   public createPerson(): void{
     this.appService.createPerson(this.clubName,this.location,this.homeGround).subscribe((data: any) => {
       this.postRequestResponse = data.content;
+    })
+  }
+
+  public getNofClubs(): void{
+    this.appService.getNofClubs().subscribe((data: any) => {
+      this.nofClubs = data.content;
     })
   }
 

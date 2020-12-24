@@ -21,8 +21,18 @@ public class FootballClubController{
         FootballClub footballClub = new FootballClub(clubName,location,homeGround,0,0,0,0,0,0,0);
         plm.getClubsArray().add(footballClub);
         plm.saveInstance(plm);
+
         JsonNode jsonNode = Json.toJson(new AppSummary(String.valueOf(plm.getClubsArray().size())));
         return ok(jsonNode).as("application/json");
     }
+
+    public Result getNofClubs(){
+        PremierLeagueManager premierLeagueManager = new PremierLeagueManager();
+        PremierLeagueManager plm = premierLeagueManager.plmCheck();
+        JsonNode jsonNode = Json.toJson(new AppSummary(String.valueOf(plm.getClubsArray().size())));
+        return ok(jsonNode).as("application/json");
+    }
+
+
 
 }
