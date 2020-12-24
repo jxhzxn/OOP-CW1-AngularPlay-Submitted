@@ -16,6 +16,7 @@ export class AppService {
   private dataPostTestUrl = '/api/postTest';
   private createUrl = '/api/createPerson/';
   private getNofClubsUrl = '/api/getNofClubs';
+  private getClubUrl = '/club/getClub';
 
   constructor(private http: HttpClient) {
   }
@@ -45,5 +46,9 @@ export class AppService {
 
   public getNofClubs() : Observable<any>{
     return this.http.post(this.getNofClubsUrl, {});
+  }
+
+  public getClub() {
+    return this.http.get(this.getClubUrl)
   }
 }

@@ -42,4 +42,10 @@ export class CreateClubComponent{
     })
   }
 
+  public getClub(): void{
+    this.appService.getClub().subscribe((data: any) => {
+      console.log(data);
+    })
+  }
+
 }
