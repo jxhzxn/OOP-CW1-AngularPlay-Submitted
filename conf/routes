@@ -7,7 +7,8 @@ GET     /                           controllers.FrontendController.index()
 
 # An example route (Prefix all API routes with apiPrefix defined in application.conf)
 #GET     /api/summary                                              controllers.FootballClubController.getClub
-GET     /footballClubs                                            controllers.FootballClubController.getClub
+GET     /footballClubs                                            controllers.FootballClubController.getAllClubs
+GET     /footballClub/:name                                       controllers.FootballClubController.getClub(name:String)
 GET     /api/summary                                              controllers.HomeController.appSummary
 
 # Serve static assets under public directory
