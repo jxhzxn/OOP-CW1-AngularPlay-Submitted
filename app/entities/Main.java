@@ -15,15 +15,10 @@ public class Main {
         //to test commit
 
         Scanner input = new Scanner(System.in);
-        Path filePath = Paths.get("./plm.ser");
 
-        PremierLeagueManager plm = new PremierLeagueManager();
 
-        if(Files.exists(filePath)){
-            plm = plm.getInstance();
-        }else {
-            plm = new PremierLeagueManager();
-        }
+        PremierLeagueManager premierLeagueManager = new PremierLeagueManager();
+        PremierLeagueManager plm = premierLeagueManager.plmCheck();
 
         plm.consoleRun();
 
@@ -41,6 +36,7 @@ public class Main {
                     System.out.print("Homeground  :   ");
                     String homeground = inputClub.nextLine();
                     plm.createClub(clubName,location,homeground);
+                    plm.saveInstance(plm);
                 }else if(option==2){
                     Scanner sc = new Scanner(System.in);
                     System.out.println(" ");

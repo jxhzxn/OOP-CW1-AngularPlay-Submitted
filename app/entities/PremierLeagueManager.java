@@ -1,6 +1,9 @@
 package entities;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.*;
 
 public class PremierLeagueManager implements Serializable,LeagueManager {
@@ -328,6 +331,19 @@ public class PremierLeagueManager implements Serializable,LeagueManager {
                 }
             }
         }
+    }
+
+    public PremierLeagueManager plmCheck(){
+        Path filePath = Paths.get("./plm.ser");
+
+        PremierLeagueManager plm = new PremierLeagueManager();
+
+        if(Files.exists(filePath)){
+            plm = plm.getInstance();
+        }else {
+            plm = new PremierLeagueManager();
+        }
+        return plm;
     }
 
 
