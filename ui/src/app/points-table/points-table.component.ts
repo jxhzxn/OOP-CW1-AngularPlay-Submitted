@@ -23,6 +23,7 @@ export class PointsTableComponent implements OnInit {
 
 
   ngOnInit() {
+    this.getClub()
   }
 
   public getClub(): void{

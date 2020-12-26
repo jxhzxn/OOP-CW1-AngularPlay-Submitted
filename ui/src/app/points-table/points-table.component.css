@@ -3,6 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 50px;
 }
 
 .card-container{
@@ -13,27 +14,56 @@
   margin-left: 0;
   padding: 0;
   width: 100%;
-  border-color: black;
-  border-width: 4px;
-  border-style: solid;
+  /*margin-bottom: 5px;*/
+  /*border-color: black;*/
+  /*border-width: 4px;*/
+  /*border-style: solid;*/
 }
 
 .card{
-  background-color: crimson;
-  width: 100%;
-  height: 50px;
+  background-color: #619196;
+  color: white;
+  width: 98%;
+  height: 60px;
   display: flex;
   justify-content: space-around;
+
+  margin-bottom: 5px;
+
+  border-radius: 10px;
+
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
   /*margin: 5px;*/
+  transform: scale(1.02);
+  cursor: pointer;
 }
 
 .card-club{
-  background-color: lightpink;
-  width: 100%;
+  /*background-color: #98DDCB;*/
+  background-color: #b2d9ea;
+  /*color: white;*/
+
+  width: 99%;
   height: 50px;
+  margin: 5px;
   display: flex;
   justify-content: space-around;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s all;
+  border-radius: 10px;
+
+  cursor: pointer;
+
   /*margin: 10px;*/
+  /*border-color: black;*/
+  /*border-width: 1px;*/
+  /*border-style: solid;*/
+}
+
+.card-club:hover{
+  transition: 0.3s all;
+  transform: scale(1.025);
 }
 
 .card-header{
@@ -46,7 +76,8 @@
 .card-element{
   display: flex;
   justify-content: center;
-  align-items: center;
+
+
 }
 
 .clubName{
@@ -66,6 +97,10 @@
 }
 
 .draws{
+  width: 10%;
+}
+
+.received{
   width: 10%;
 }
 
