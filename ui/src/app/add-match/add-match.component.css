@@ -1,0 +1,159 @@
+
+
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /*border-style: solid;*/
+  /*border-color: black;*/
+  /*border-width: 3px;*/
+  margin-top: 80px;
+}
+
+.container-inside{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*border-style: solid;*/
+  /*border-color: black;*/
+  /*border-width: 3px;*/
+}
+
+.box1{
+  /*border-style: solid;*/
+  /*border-color: black;*/
+  /*border-width: 3px;*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  width: 48%;
+  padding: 20px;
+}
+
+.box-inside{
+  display: flex;
+  justify-items: center;
+  align-items: center;
+ flex-direction: column;
+}
+
+.box2{
+  /*border-style: solid;*/
+  /*border-color: black;*/
+  /*border-width: 3px;*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 4%;
+}
+
+.box3{
+  /*border-style: solid;*/
+  /*border-color: black;*/
+  /*border-width: 3px;*/
+   display: flex;
+  flex-direction: column;
+   justify-content: center;
+   align-items: center;
+  width: 48%;
+  align-items: flex-start;
+  padding: 20px;
+ }
+
+.vsText{
+  font-size: 22px;
+}
+
+.input-name{
+  margin: 10px;
+  width: 200px;
+  height: 40px;
+  font-size: 22px;
+  border: none;
+  /*box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);*/
+  background-color: white;
+  border-radius: 5px;
+}
+
+.input-goal{
+  border: none;
+  margin: 10px;
+  width: 60px;
+  font-size: 22px;
+  height: 40px;
+  background-color: white;
+  border-radius: 5px;
+
+}
+
+/*input{*/
+/*  -webkit-box-shadow:inset 0 0 5px #6f6f6f;*/
+/*  -moz-box-shadow:inset 0 0 5px #6f6f6f;*/
+/*  box-shadow:inset 0 0 5px #6f6f6f;*/
+
+/*  background: transparent;*/
+/*}*/
+
+/*input{*/
+/*  -moz-box-shadow:    inset 0 0 5px #000000;*/
+/*  -webkit-box-shadow: inset 0 0 5px #000000;*/
+/*  box-shadow:         inset 0 0 5px #000000;*/
+/*}*/
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.btnContainer{
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  /*border-style: solid;*/
+  /*border-color: yellow;*/
+  /*border-width: 3px;*/
+  /*background-color: yellow;*/
+}
+
+.addBtn{
+  margin: 10px;
+  font-size: 22px;
+  background-color: #6d91cf;
+  border: none;
+  height: 40px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s all;
+  cursor: pointer;
+  border-radius: 5px;
+
+}
+
+.addBtn:hover{
+  transition: 0.3s all;
+  transform: scale(1.025);
+}
+
+.toColor{
+  /*border-style: solid;*/
+  /*border-color: red;*/
+  /*border-width: 3px;*/
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  background-color: #bdd8e5;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s all;
+  border-radius: 10px;
+}

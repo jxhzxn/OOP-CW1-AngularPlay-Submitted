@@ -1,1 +1,26 @@
-<p>add-match works!</p>
+<h2>Add Match</h2>
+
+<div class="container">
+  <div class="toColor">
+  <div class="container-inside">
+  <div class="box1">
+      <div class="box-inside">
+      <input type="text" placeholder="Club Name" class="input-name" [(ngModel)]="clubName1">
+      <input type="number" placeholder="Goals" class="input-goal" [(ngModel)]="goal1">
+    </div>
+  </div>
+  <div class="box2">
+    <p class="vsText">VS</p>
+  </div>
+  <div class="box3">
+    <div class="box-inside">
+      <input type="text" placeholder="Club Name" class="input-name" [(ngModel)]="clubName2">
+      <input type="number" placeholder="Goals" class="input-goal" [(ngModel)]="goal2">
+    </div>
+  </div>
+  </div>
+  <div class="btnContainer">
+    <button class="addBtn" (click)="addMatch()">Add Match</button>
+  </div>
+  </div>
+</div>

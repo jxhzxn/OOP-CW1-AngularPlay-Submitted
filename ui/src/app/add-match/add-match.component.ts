@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AddMatchService} from "../services/add-match.service";
 
 @Component({
   selector: 'app-add-match',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddMatchComponent implements OnInit {
 
-  constructor() { }
+  constructor(private addMatchService: AddMatchService) { }
+
+  clubName1:string;
+  clubName2:string;
+  goal1:number;
+  goal2:number;
 
   ngOnInit() {
+  }
+
+  public addMatch(): void{
+      this.addMatchService.addMatch(this.clubName1,this.clubName2,this.goal1,this.goal2).subscribe((data: any) => {
+        alert("success");
+        console.log(data.content);
+      })
   }
 
 }

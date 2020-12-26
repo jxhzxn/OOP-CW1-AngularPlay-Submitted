@@ -1,5 +1,5 @@
 header{
-  background-color: #ffb844;
+  background-color: #ea7989;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
@@ -13,7 +13,7 @@ a{
 }
 
 a:hover{
-  background-color: #ffa200;
+  background-color: #e85a6c;
 }
 
 .nav-items{

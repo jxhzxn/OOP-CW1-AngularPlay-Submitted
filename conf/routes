@@ -1,26 +1,14 @@
-# Routes
-# This file defines all application routes (Higher priority routes first)
-# ~~~~
 
-# Serve index page from public directory
 GET     /                           controllers.FrontendController.index()
-
-# An example route (Prefix all API routes with apiPrefix defined in application.conf)
-#GET     /api/summary                                              controllers.FootballClubController.getClub
 GET     /footballClubs                                            controllers.FootballClubController.getAllClubs
 GET     /footballClub/:name                                       controllers.FootballClubController.getClub(name:String)
 GET     /api/summary                                              controllers.HomeController.appSummary
-
-# Serve static assets under public directory
 GET     /*file                                                    controllers.FrontendController.assetOrDefault(file)
 
-
-
-# Test post request
 POST    /api/postTest                                             controllers.HomeController.postTest()
-
 POST     /api/createPerson/:clubName/:location/:homeGround        controllers.FootballClubController.createFootballClub(clubName:String,location:String,homeGround:String)
-
-POST     /api/getNofClubs                                          controllers.FootballClubController.getNofClubs
+POST     /api/getNofClubs                                         controllers.FootballClubController.getNofClubs
+POST     /addMatch/:clubName1/:clubName2/:goal1/:goal2            controllers.MatchController.addMatch(clubName1:String,clubName2:String,goal1:Int,goal2:Int)
+#POST     /addMatch                                                 controllers.MatchController.addMatch
 
 
