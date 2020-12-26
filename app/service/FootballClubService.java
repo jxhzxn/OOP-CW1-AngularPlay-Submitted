@@ -5,6 +5,7 @@ import entities.PremierLeagueManager;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class FootballClubService {
@@ -12,7 +13,7 @@ public class FootballClubService {
     public Set<FootballClub> getAllClubs() {
         PremierLeagueManager premierLeagueManager = new PremierLeagueManager();
         PremierLeagueManager plm = premierLeagueManager.plmCheck();
-        return new HashSet<>(plm.getClubsArray());
+        return new LinkedHashSet<>(plm.sortTable(plm.getClubsArray()));
     }
 
     public HashSet getClub(String name) {

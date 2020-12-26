@@ -64,6 +64,7 @@
 .card-club:hover{
   transition: 0.3s all;
   transform: scale(1.025);
+  font-weight: bold;
 }
 
 .card-header{

@@ -79,7 +79,7 @@ public class PremierLeagueManager implements Serializable,LeagueManager {
     public void displayTable(){
 
 //        System.out.println(clubsArray.size());
-        sortTable();
+        sortTable(getClubsArray());
 
         System.out.println("");
         System.out.println("[[ Points Table ]]");
@@ -222,22 +222,27 @@ public class PremierLeagueManager implements Serializable,LeagueManager {
 //        System.out.println("test1");
 //    }
 
-    public void sortTable(){
-        if(clubsArray.size()==1){
+    public ArrayList<FootballClub> sortTable(ArrayList<FootballClub> toSort){
+        ArrayList<ArrayList<FootballClub>> toReturn = new ArrayList<>();
+        if(toSort.size()==1){
 
         }else {
-            for (int y = 1; y <= clubsArray.size() - 1; y++) {
-                for (int x = 1; x <= clubsArray.size() - 1; x++) {
-                    if (clubsArray.get(x).getNofPoints() > clubsArray.get(x - 1).getNofPoints()) {
-                        Collections.swap(clubsArray, x, x - 1);
-                    } else if (clubsArray.get(x).getNofPoints() == clubsArray.get(x - 1).getNofPoints()) {
-                        if (clubsArray.get(x).getNofGoalsScored() > clubsArray.get(x - 1).getNofGoalsScored()) {
-                            Collections.swap(clubsArray, x, x - 1);
+            for (int y = 1; y <= toSort.size() - 1; y++) {
+                for (int j = 1; j <= toSort.size() - 1; j++) {
+                    for (int x = 1; x <= toSort.size() - 1; x++) {
+                        if (toSort.get(x).getNofPoints() > toSort.get(x - 1).getNofPoints()) {
+                            Collections.swap(toSort, x, x - 1);
+                        } else if (toSort.get(x).getNofPoints() == toSort.get(x - 1).getNofPoints()) {
+                            if (toSort.get(x).getNofGoalsScored() > toSort.get(x - 1).getNofGoalsScored()) {
+                                Collections.swap(toSort, x, x - 1);
+                            }
                         }
                     }
                 }
             }
+            toReturn.add(toSort);
         }
+        return toReturn.get(0);
     }
 
     public void saveInstance(PremierLeagueManager plm){

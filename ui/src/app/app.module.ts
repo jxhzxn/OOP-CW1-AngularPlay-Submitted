@@ -15,6 +15,7 @@ import { CreateClubComponent } from './create-club/create-club.component';
 
 import {MatTableModule} from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AddMatchComponent } from './add-match/add-match.component';
 
 const material = [
   MatTableModule
@@ -23,6 +24,7 @@ const material = [
 const routes: Routes = [
   { path:'', component: PointsTableComponent },
   { path:'createClub', component: CreateClubComponent },
+  { path:'addMatch', component: AddMatchComponent},
   {
     path: 'java',
     component: RouteExampleComponent,
@@ -51,7 +53,8 @@ const routes: Routes = [
     RouteExampleComponent,
     NavbarComponent,
     PointsTableComponent,
-    CreateClubComponent
+    CreateClubComponent,
+    AddMatchComponent
   ],
   imports: [
     BrowserModule,

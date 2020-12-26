@@ -31,10 +31,11 @@ export class CreateClubComponent{
     });
   }
 
-  public createPerson(): void{
+  public createClub(): void{
     if(this.clubName!=null && this.location!=null && this.homeGround!=null){
       this.appService.createClub(this.clubName,this.location,this.homeGround).subscribe((data: any) => {
         this.postRequestResponse = data.content;
+        alert("Club Created");
       })
     }else{
       alert("All the Fields Should be Filled");

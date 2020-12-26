@@ -2,6 +2,9 @@
 .container{
   max-width: 1200px;
   margin: 0 auto;
+  /*height: 60px;*/
+  display: flex;
+  align-items: center;
 }
 
 html, body { height: 100%; }
