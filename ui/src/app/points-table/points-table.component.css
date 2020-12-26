@@ -59,27 +59,32 @@
   /*border-color: black;*/
   /*border-width: 1px;*/
   /*border-style: solid;*/
+
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
 }
 
-.card-club:hover{
-  background-color: #b0d4e2;
-  transition: 0.3s all;
-  transform: scale(1.025);
-  font-weight: bold;
-}
+
 
 .card-header{
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: bold;
+  font-weight: 800;
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .card-element{
   display: flex;
   justify-content: center;
+}
 
-
+.card-club:hover{
+  background-color: #b0d4e2;
+  transition: 0.3s all;
+  transform: scale(1.02);
+  font-weight: 700;
 }
 
 .clubName{
