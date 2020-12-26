@@ -14,7 +14,6 @@ public class ApplicationUtil {
         }else{
             result.set("response",(JsonNode) response);
         }
-
         return result;
     }
 }

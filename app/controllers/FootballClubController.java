@@ -41,6 +41,7 @@ public class FootballClubController{
         ObjectMapper mapper = new ObjectMapper();
         JsonNode jsonData = mapper.convertValue(result, JsonNode.class);
         return ok(ApplicationUtil.createResponse(jsonData, true));
+//        return ok(jsonData);
     }
 
     public Result getClub(String name){
@@ -57,7 +58,6 @@ public class FootballClubController{
         PremierLeagueManager plm = premierLeagueManager.plmCheck();
         JsonNode jsonNode = Json.toJson(new AppSummary(String.valueOf(plm.getClubsArray().size())));
         return ok(jsonNode).as("application/json");
-
     }
 
 

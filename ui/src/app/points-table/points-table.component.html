@@ -1,1 +1,39 @@
-<h1 align="center">Points Table</h1>
+<Button (click)="getClub()">Table Populate</Button>
+
+<div class="container">
+  <div class="card-container">
+
+
+  <div class="card">
+      <p class="card-header clubName  ">Club Name</p>
+      <p class="card-header location  ">Location</p>
+      <p class="card-header homeGround">Home Ground</p>
+      <p class="card-header defeats   ">Defeats</p>
+      <p class="card-header draws     ">Draws</p>
+      <p class="card-header received  ">G Received</p>
+      <p class="card-header scored    ">G Scored</p>
+      <p class="card-header matches   ">Matches</p>
+      <p class="card-header wins      ">Wins</p>
+      <p class="card-header points    ">Points</p>
+  </div>
+
+  <div class="card-club" *ngFor="let club of array">
+    <p class="card-element clubName     ">{{club.clubName}}</p>
+    <p class="card-element location     ">{{club.location}}</p>
+    <p class="card-element homeGround   ">{{club.homeGround}}</p>
+    <p class="card-element defeats      ">{{club.nofDefeats}}</p>
+    <p class="card-element draws        ">{{club.nofDraws}}</p>
+    <p class="card-element received     ">{{club.nofGoalsReceived}}</p>
+    <p class="card-element scored       ">{{club.nofGoalsScored}}</p>
+    <p class="card-element matches      ">{{club.nofMatches}}</p>
+    <p class="card-element wins         ">{{club.nofWins}}</p>
+    <p class="card-element points       ">{{club.nofPoints}}</p>
+  </div>
+
+  </div>
+</div>
+
+
+
+
+

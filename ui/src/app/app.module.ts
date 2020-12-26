@@ -13,6 +13,13 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { PointsTableComponent } from './points-table/points-table.component';
 import { CreateClubComponent } from './create-club/create-club.component';
 
+import {MatTableModule} from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+const material = [
+  MatTableModule
+]
+
 const routes: Routes = [
   { path:'', component: PointsTableComponent },
   { path:'createClub', component: CreateClubComponent },
@@ -48,13 +55,15 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
+    MatTableModule,
     FormsModule,
     HttpClientModule,
     HttpClientXsrfModule.withOptions({
       cookieName: 'Csrf-Token',
       headerName: 'Csrf-Token',
     }),
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    BrowserAnimationsModule
   ],
   providers: [
     AppService,

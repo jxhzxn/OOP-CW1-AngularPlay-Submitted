@@ -13,7 +13,8 @@ export class CreateClubComponent{
   clubName: string;
   location: string;
   homeGround: string;
-  nofClubs: string;
+  nof_clubs : number;
+  chandira:number;
 
   constructor(private appService: AppService) {
     this.appService.getWelcomeMessage().subscribe((data: any) => {
@@ -41,15 +42,17 @@ export class CreateClubComponent{
 
   }
 
-  public getNofClubs(): void{
-    this.appService.getNofClubs().subscribe((data: any) => {
-      this.nofClubs = data.content;
+  public getClub(): void{
+    this.appService.getClub().subscribe((data: any) => {
+      this.nof_clubs = data.response.length;
+      var tested = Object.keys(data);
+      console.log(data.response);
     })
   }
 
-  public getClub(): void{
-    this.appService.getClub().subscribe((data: any) => {
-      console.log(data);
+  public getNumber():void{
+    this.appService.getNofClubs().subscribe((data:any) =>{
+      this.chandira=data.content;
     })
   }
 
