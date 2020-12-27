@@ -15,9 +15,7 @@ export class PointsTableComponent implements OnInit {
   //   location:[]
   // };
 
-  array = [
-
-  ]
+  array = []
 
   constructor(private pointsTableService: PointsTableService) { }
 
