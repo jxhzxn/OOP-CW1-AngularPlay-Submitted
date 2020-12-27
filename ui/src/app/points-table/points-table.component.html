@@ -4,9 +4,12 @@
 </head>
 
 <div class="container">
+  <div class="headTextContainer">
+    <p class="headText">Points Table</p>
+  </div>
   <div class="card-container">
 
-
+<div class="top-card-container">
   <div class="card">
       <p class="card-header clubName  ">Club Name</p>
       <p class="card-header location  ">Location</p>
@@ -19,6 +22,7 @@
       <p class="card-header wins      ">Wins</p>
       <p class="card-header points    ">Points</p>
   </div>
+</div>
 <!--<div class="card-club-container">-->
   <div class="card-club" *ngFor="let club of array">
     <p class="card-element clubName     ">{{club.clubName}}</p>
