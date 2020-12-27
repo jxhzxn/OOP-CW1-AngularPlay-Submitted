@@ -15,11 +15,14 @@ export class AddMatchComponent implements OnInit {
   goal1:number;
   goal2:number;
 
+  array=[]
+
   ngOnInit() {
+    this.getClub()
   }
 
   public addMatch(): void{
-    
+
     if(this.goal1==null){
       this.goal1=0;
     }
@@ -35,6 +38,12 @@ export class AddMatchComponent implements OnInit {
       })
     }
 
+  }
+
+  public getClub(): void{
+    this.addMatchService.getClub().subscribe((data: any) => {
+      this.array = data.response;
+    })
   }
 
 }

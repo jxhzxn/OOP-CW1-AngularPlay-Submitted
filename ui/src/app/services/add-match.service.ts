@@ -8,6 +8,7 @@ import {Observable} from "rxjs";
 export class AddMatchService {
 
   private addMatchUrl = '/addMatch/';
+  private getClubUrl = '/footballClubs';
 
   constructor(private http: HttpClient) { }
 
@@ -15,5 +16,9 @@ export class AddMatchService {
   public addMatch(clubName1:string,clubName2:string,goal1:number,goal2:number) : Observable<any> {
     let url = this.addMatchUrl+clubName1+'/'+clubName2+'/'+goal1+'/'+goal2;
     return this.http.post(url,{});
+  }
+
+  public getClub() {
+    return this.http.get(this.getClubUrl)
   }
 }

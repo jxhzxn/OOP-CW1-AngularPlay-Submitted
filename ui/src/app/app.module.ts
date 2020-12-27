@@ -14,12 +14,16 @@ import { PointsTableComponent } from './points-table/points-table.component';
 import { CreateClubComponent } from './create-club/create-club.component';
 
 import {MatTableModule} from '@angular/material';
+import {MatSelectModule} from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddMatchComponent } from './add-match/add-match.component';
 import { MatchesComponent } from './matches/matches.component';
 
+
+
 const material = [
-  MatTableModule
+  MatTableModule,
+  MatSelectModule
 ]
 
 const routes: Routes = [
@@ -69,7 +73,8 @@ const routes: Routes = [
       headerName: 'Csrf-Token',
     }),
     RouterModule.forRoot(routes),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatSelectModule
   ],
   providers: [
     AppService,
