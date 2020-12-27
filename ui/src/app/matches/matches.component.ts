@@ -13,11 +13,13 @@ export class MatchesComponent implements OnInit {
   constructor(private matchesService : MatchesService) { }
 
   ngOnInit() {
+    this.getMatches()
   }
 
   public getMatches(): void{
     this.matchesService.getMatches().subscribe((data: any) => {
       this.array = data.response;
+      console.log(data.response)
     })
   }
 

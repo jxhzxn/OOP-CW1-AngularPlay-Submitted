@@ -3,32 +3,38 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
-<h2>Add Match</h2>
-
-<div class="container">
-  <div class="toColor">
-  <div class="container-inside">
-  <div class="box1">
-      <div class="box-inside">
-      <input type="text" placeholder="Club Name" class="input-name" [(ngModel)]="clubName1">
-      <input type="number" placeholder="Goals" class="input-goal" [(ngModel)]="goal1">
-    </div>
-  </div>
-  <div class="box2">
-    <p class="vsText">VS</p>
-  </div>
-  <div class="box3">
-    <div class="box-inside">
-      <input type="text" placeholder="Club Name" class="input-name" [(ngModel)]="clubName2">
-      <input type="number" placeholder="Goals" class="input-goal" [(ngModel)]="goal2">
-    </div>
-  </div>
-  </div>
-  <div class="btnContainer">
-    <button [ngClass]="{'not-active': clubName1==null || clubName2==null || goal1==null || goal2==null, 'addBtn': clubName1!=null && clubName2!=null && goal1!=null && goal2!=null}" (click)="addMatch()">Add Match</button>
-  </div>
+<div class="containerOne">
+  <div class="headTextContainer">
+    <p class="headText">Add Match</p>
   </div>
 
+  <div class="container">
+    <div class="toColor">
+      <div class="container-inside">
+        <div class="box1">
+          <div class="box-inside">
+            <input type="text" placeholder="Club Name" class="input-name" [(ngModel)]="clubName1">
+            <input type="number" placeholder="Goals" class="input-goal" [(ngModel)]="goal1">
+          </div>
+        </div>
+        <div class="box2">
+          <p class="vsText">VS</p>
+        </div>
+        <div class="box3">
+          <div class="box-inside">
+            <input type="text" placeholder="Club Name" class="input-name" [(ngModel)]="clubName2">
+            <input type="number" placeholder="Goals" class="input-goal" [(ngModel)]="goal2">
+          </div>
+        </div>
+      </div>
+      <div class="btnContainer">
+        <button [ngClass]="{'not-active': clubName1==null || clubName2==null || goal1==null || goal2==null, 'addBtn': clubName1!=null && clubName2!=null && goal1!=null && goal2!=null}" (click)="addMatch()">Add Match</button>
+      </div>
+    </div>
+
+  </div>
 </div>
+
+
 
 <!--*ngIf="clubName1!=null && clubName2!=null"-->

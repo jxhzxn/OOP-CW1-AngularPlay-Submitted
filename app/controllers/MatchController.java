@@ -8,6 +8,7 @@ import entities.Match;
 import entities.PremierLeagueManager;
 import play.libs.Json;
 import play.mvc.Result;
+import service.FootballClubService;
 import service.MatchService;
 import utils.ApplicationUtil;
 
@@ -41,5 +42,14 @@ public class MatchController {
 
 //        JsonNode jsonNode = Json.toJson(new AppSummary(plm.getPlayedMatches().get(plm.getPlayedMatches().size()-1).getTeam1Name()));
 //        return ok(jsonNode).as("application/json");
+    }
+
+    public Result getAllMatches(){
+
+        MatchService ms = new MatchService();
+        Set<Match> result = ms.getAllMatches();
+        ObjectMapper mapper = new ObjectMapper();
+        JsonNode jsonData = mapper.convertValue(result, JsonNode.class);
+        return ok(ApplicationUtil.createResponse(jsonData, true));
     }
 }

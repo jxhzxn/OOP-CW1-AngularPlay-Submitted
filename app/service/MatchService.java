@@ -59,4 +59,10 @@ public class MatchService {
         plm.saveInstance(plm);
         return new LinkedHashSet<>(plm.getPlayedMatches());
     }
+
+    public Set<Match> getAllMatches() {
+        PremierLeagueManager premierLeagueManager = new PremierLeagueManager();
+        PremierLeagueManager plm = premierLeagueManager.plmCheck();
+        return new LinkedHashSet<>(plm.getPlayedMatches());
+    }
 }

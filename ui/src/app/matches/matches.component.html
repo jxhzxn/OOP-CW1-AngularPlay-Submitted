@@ -6,6 +6,7 @@
 <div class="container">
   <div class="headTextContainer">
     <p class="headText">Matches</p>
+<!--    <button (click)="getMatches()">test</button>-->
   </div>
   <div class="card-container">
 
@@ -20,11 +21,11 @@
     </div>
     <!--<div class="card-club-container">-->
     <div class="card-club" *ngFor="let match of array">
-      <p class="card-element clubName     ">{{match.clubName}}</p>
-      <p class="card-element location     ">{{match.location}}</p>
-      <p class="card-element homeGround   ">{{match.homeGround}}</p>
-      <p class="card-element defeats      ">{{match.nofDefeats}}</p>
-      <p class="card-element draws        ">{{match.nofDraws}}</p>
+      <p class="card-element clubName     ">{{match.date.day+'/'+match.date.month+'/'+match.date.year}}</p>
+      <p class="card-element location     ">{{match.team1.clubName}}</p>
+      <p class="card-element homeGround   ">{{match.team1Score}}</p>
+      <p class="card-element defeats      ">{{match.team2.clubName}}</p>
+      <p class="card-element draws        ">{{match.team2Score}}</p>
     </div>
     <!--</div>-->
   </div>

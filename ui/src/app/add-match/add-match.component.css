@@ -210,6 +210,39 @@ input[type=number] {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
+.containerOne{
+  /*width: 120%;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.headTextContainer{
+  /*border-style: solid;*/
+  /*border-color: black;*/
+  /*border-width: 3px;*/
+
+
+  margin-top: 20px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.headText{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  font-weight: 900;
+  font-size: 32px;
+  font-family: 'Montserrat', sans-serif;
+  color: #fff7f7;
+  background-color: #ff6961;
+  padding: 20px;
+  border-radius: 10px;
+}
+
 
 
 

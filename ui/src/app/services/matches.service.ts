@@ -6,7 +6,7 @@ import {HttpClient} from "@angular/common/http";
 })
 export class MatchesService {
 
-  private getMatchesUrl = '/api/summary';
+  private getMatchesUrl = '/matches';
 
   constructor(private http: HttpClient) { }
 

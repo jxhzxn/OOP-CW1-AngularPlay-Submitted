@@ -1,6 +1,7 @@
 
-GET     /                           controllers.FrontendController.index()
+GET     /                                                         controllers.FrontendController.index()
 GET     /footballClubs                                            controllers.FootballClubController.getAllClubs
+GET     /matches                                                  controllers.MatchController.getAllMatches
 GET     /footballClub/:name                                       controllers.FootballClubController.getClub(name:String)
 GET     /api/summary                                              controllers.HomeController.appSummary
 GET     /*file                                                    controllers.FrontendController.assetOrDefault(file)
