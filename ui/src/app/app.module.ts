@@ -15,6 +15,9 @@ import { CreateClubComponent } from './create-club/create-club.component';
 
 import {MatTableModule} from '@angular/material';
 import {MatSelectModule} from '@angular/material/select';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBarModule} from '@angular/material/snack-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddMatchComponent } from './add-match/add-match.component';
 import { MatchesComponent } from './matches/matches.component';
@@ -23,7 +26,10 @@ import { MatchesComponent } from './matches/matches.component';
 
 const material = [
   MatTableModule,
-  MatSelectModule
+  MatSelectModule,
+  MatDialogModule,
+  MatSnackBarModule,
+  MatTooltipModule
 ]
 
 const routes: Routes = [
@@ -82,7 +88,8 @@ const routes: Routes = [
       multi: true,
       provide: HTTP_INTERCEPTORS,
       useClass: AppHttpInterceptorService
-    }
+    },
+    {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2500}}
   ],
   exports: [
     RouterModule

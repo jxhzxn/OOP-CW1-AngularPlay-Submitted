@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {AddMatchService} from "../services/add-match.service";
+import {matSnackBarAnimations} from "@angular/material/snack-bar";
+import {SnackBarOverviewExample} from "../services/custom-alert.service";
 
 @Component({
   selector: 'app-add-match',
@@ -15,11 +17,18 @@ export class AddMatchComponent implements OnInit {
   goal1:number;
   goal2:number;
 
+
   array=[]
 
   ngOnInit() {
     this.getClub()
   }
+
+  // openSnackBar(message: string, action: string) {
+  //   this._snackBar.open(message, action, {
+  //     duration: 2000,
+  //   });
+  // }
 
   public addMatch(): void{
 
@@ -34,7 +43,12 @@ export class AddMatchComponent implements OnInit {
       alert("Fill Everything");
     }else{
       this.addMatchService.addMatch(this.clubName1,this.clubName2,this.goal1,this.goal2).subscribe((data: any) => {
-        alert("success");
+        // this.openSnackBar("Match Added","Close");
+        alert("Match Added");
+        this.clubName1 = null;
+        this.clubName2 = null;
+        this.goal1 = null;
+        this.goal2 = null;
       })
     }
 
@@ -47,3 +61,7 @@ export class AddMatchComponent implements OnInit {
   }
 
 }
+
+
+
+
