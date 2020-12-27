@@ -1,12 +1,21 @@
-<div style="text-align:center;">
+<head>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
 
-  <div class="post-request-test">
-    <h3>Create Football Club</h3>
-    <div class="form-container">
-      <input class="item" type="text" [(ngModel)]="clubName" placeholder="Club Name">
-      <input class="item" type="text" [(ngModel)]="location" placeholder="Club Location">
-      <input class="item" type="text" [(ngModel)]="homeGround" placeholder="Home Ground">
-      <button class="createBtn" (click)="createClub()">Create Club</button>
-    </div>
+<div class="container">
+  <div class="headTextContainer">
+    <p class="headText">Create Club</p>
   </div>
+
+
+  <div class="form-container">
+    <input class="item" type="text" [(ngModel)]="clubName" placeholder="Club Name">
+    <input class="item" type="text" [(ngModel)]="location" placeholder="Club Location">
+    <input class="item" type="text" [(ngModel)]="homeGround" placeholder="Home Ground">
+    <button class="createBtn" (click)="createClub()">Create Club</button>
+  </div>
+
+
 </div>
+

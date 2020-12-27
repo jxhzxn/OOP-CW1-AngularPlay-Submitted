@@ -1,0 +1,36 @@
+<head>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<div class="container">
+  <div class="headTextContainer">
+    <p class="headText">Matches</p>
+  </div>
+  <div class="card-container">
+
+    <div class="top-card-container">
+      <div class="card">
+        <p class="card-header clubName  ">Date</p>
+        <p class="card-header location  ">Club Name</p>
+        <p class="card-header homeGround">Goals</p>
+        <p class="card-header defeats   ">ClubName</p>
+        <p class="card-header draws     ">Goals</p>
+      </div>
+    </div>
+    <!--<div class="card-club-container">-->
+    <div class="card-club" *ngFor="let match of array">
+      <p class="card-element clubName     ">{{match.clubName}}</p>
+      <p class="card-element location     ">{{match.location}}</p>
+      <p class="card-element homeGround   ">{{match.homeGround}}</p>
+      <p class="card-element defeats      ">{{match.nofDefeats}}</p>
+      <p class="card-element draws        ">{{match.nofDraws}}</p>
+    </div>
+    <!--</div>-->
+  </div>
+</div>
+
+
+
+
+
