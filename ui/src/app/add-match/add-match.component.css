@@ -40,6 +40,65 @@
   /*border-width: 3px;*/
 }
 
+.date-container{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.datePickerText{
+  font-size: 22px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: black;
+}
+
+.calendarView{
+  width: 180px;
+}
+
+.test{
+  /*background-color: #ff6961;*/
+  /*background-color: #fff7f7;*/
+  /*border-style: solid;*/
+  /*border-color: black;*/
+  /*border-width: 3px;*/
+}
+
+.datePickerHead{
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: black;
+}
+
+.input-goal-mat{
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: black;
+  width: 80px;
+  text-align: center;
+  /*background-color: #fff7f7;*/
+}
+
+.clubInput{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-style: solid;
+  border-color: #4b7bcd;
+  border-width: 4px;
+  height: 70px;
+  width: 210px;
+  padding: 0;
+  /*box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);*/
+  background-color: #6d91cf;
+
+}
+
 .box1{
   /*border-style: solid;*/
   /*border-color: black;*/
@@ -57,6 +116,8 @@
   justify-items: center;
   align-items: center;
  flex-direction: column;
+
+
 }
 
 .box2{
@@ -67,7 +128,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 4%;
+  /*width: 4%;*/
 }
 
 .box3{
@@ -86,7 +147,7 @@
 .vsText{
   font-size: 22px;
   font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
+  font-weight: 800;
 }
 
 .input-name{
@@ -203,10 +264,12 @@ input[type=number] {
   flex-direction: column;
   justify-items: center;
   align-items: center;
-  background-color: #bdd8e5;
-  /*border-color: #28a9dc;*/
-  /*border-style: solid;*/
-  /*border-width: 6px;*/
+  /*background-color: #d8e6ec;*/
+  background-color: #fff7f7;
+
+  border-color: #28a9dc;
+  border-style: solid;
+  border-width: 6px;
   /*background-color: #e2eef5;*/
   /*box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);*/
   transition: 0.3s all;
