@@ -9,18 +9,36 @@ import {MatchesService} from "../services/matches.service";
 export class MatchesComponent implements OnInit {
 
   array=[]
+  test:boolean;
 
   constructor(private matchesService : MatchesService) { }
 
   ngOnInit() {
     this.getMatches()
+    this.test=false;
   }
 
   public getMatches(): void{
-    this.matchesService.getMatches().subscribe((data: any) => {
-      this.array = data.response;
-      console.log(data.response)
-    })
+      this.matchesService.getMatches().subscribe((data: any) => {
+        this.array = data.response;
+        console.log(data.response)
+      })
+    }
+
+
+
+  public getMatchesSorted(): void{
+    if(this.test==false){
+      this.matchesService.getMatchesSorted().subscribe((data: any) => {
+        this.array = data.response;
+        console.log(data.response)
+      })
+    }else if(this.test==true){
+      this.matchesService.getMatches().subscribe((data: any) => {
+        this.array = data.response;
+        console.log(data.response)
+      })
+    }
   }
 
 }

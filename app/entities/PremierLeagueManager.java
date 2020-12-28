@@ -316,26 +316,29 @@ public class PremierLeagueManager implements Serializable,LeagueManager {
 //        }
 //    }
 
-    public void sortTableDate(){
-        if(getPlayedMatches().size()==1){
+    public ArrayList<Match> sortTableDate(ArrayList<Match> matchesArray){
+        ArrayList<ArrayList<Match>> toReturn = new ArrayList<>();
+        if(matchesArray.size()==1){
 
         }else {
-            for (int y = 1; y <= getPlayedMatches().size() - 1; y++) {
-                for (int x = 1; x <= getPlayedMatches().size() - 1; x++) {
-                    if (getPlayedMatches().get(x).getDate().getYear() < getPlayedMatches().get(x - 1).getDate().getYear()) {
-                        Collections.swap(getPlayedMatches(), x, x - 1);
-                    }if(getPlayedMatches().get(x).getDate().getYear() == getPlayedMatches().get(x - 1).getDate().getYear()) {
-                        if (getPlayedMatches().get(x).getDate().getMonth() < getPlayedMatches().get(x - 1).getDate().getMonth()) {
-                            Collections.swap(getPlayedMatches(), x, x - 1);
+            for (int y = 1; y <= matchesArray.size() - 1; y++) {
+                for (int x = 1; x <= matchesArray.size() - 1; x++) {
+                    if (matchesArray.get(x).getDate().getYear() < matchesArray.get(x - 1).getDate().getYear()) {
+                        Collections.swap(matchesArray, x, x - 1);
+                    }if(matchesArray.get(x).getDate().getYear() == matchesArray.get(x - 1).getDate().getYear()) {
+                        if (matchesArray.get(x).getDate().getMonth() < matchesArray.get(x - 1).getDate().getMonth()) {
+                            Collections.swap(matchesArray, x, x - 1);
                         }
-                    }if(getPlayedMatches().get(x).getDate().getYear() == getPlayedMatches().get(x - 1).getDate().getYear() && getPlayedMatches().get(x).getDate().getMonth() == getPlayedMatches().get(x - 1).getDate().getMonth()){
-                        if (getPlayedMatches().get(x).getDate().getDay() < getPlayedMatches().get(x - 1).getDate().getDay()) {
-                            Collections.swap(getPlayedMatches(), x, x - 1);
+                    }if(matchesArray.get(x).getDate().getYear() == matchesArray.get(x - 1).getDate().getYear() && matchesArray.get(x).getDate().getMonth() == matchesArray.get(x - 1).getDate().getMonth()){
+                        if (matchesArray.get(x).getDate().getDay() < matchesArray.get(x - 1).getDate().getDay()) {
+                            Collections.swap(matchesArray, x, x - 1);
                         }
                     }
                 }
             }
+            toReturn.add(matchesArray);
         }
+        return toReturn.get(0);
     }
 
     public PremierLeagueManager plmCheck(){

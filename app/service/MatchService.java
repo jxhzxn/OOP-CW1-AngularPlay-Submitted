@@ -65,4 +65,10 @@ public class MatchService {
         PremierLeagueManager plm = premierLeagueManager.plmCheck();
         return new LinkedHashSet<>(plm.getPlayedMatches());
     }
+
+    public Set<Match> getAllMatchesSorted() {
+        PremierLeagueManager premierLeagueManager = new PremierLeagueManager();
+        PremierLeagueManager plm = premierLeagueManager.plmCheck();
+        return new LinkedHashSet<>(plm.sortTableDate(plm.getPlayedMatches()));
+    }
 }

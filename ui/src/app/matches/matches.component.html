@@ -6,7 +6,9 @@
 <div class="container">
   <div class="headTextContainer">
     <p class="headText">Matches</p>
-<!--    <button (click)="getMatches()">test</button>-->
+  </div>
+  <div [ngClass]="{'before': test==false, 'after': test==true}">
+    <mat-slide-toggle [(ngModel)]="test" (click)="getMatchesSorted()"><span class="sortText">Sort by Date</span></mat-slide-toggle>
   </div>
   <div class="card-container">
 

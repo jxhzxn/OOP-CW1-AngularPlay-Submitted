@@ -153,6 +153,50 @@
   justify-content: center;
 }
 
+.before{
+  margin-top: 20px;
+  /*border-style: solid;*/
+  /*border-color: black;*/
+  /*border-width: 4px;*/
+  padding: 5px;
+  background-color: #e85a6c;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 10px;
+  /*margin-left: 100px;*/
+}
+
+.after{
+  margin-top: 20px;
+  /*border-style: solid;*/
+  /*border-color: black;*/
+  /*border-width: 4px;*/
+  padding: 5px;
+  background-color: #e7b4be;
+  /*background-color: black;*/
+  /*color: #e85a6c;*/
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 10px;
+  /*margin-left: 100px;*/
+}
+
+
+.sortContainer{
+  margin-top: 20px;
+  /*border-style: solid;*/
+  /*border-color: black;*/
+  /*border-width: 4px;*/
+  padding: 5px;
+  background-color: #e85a6c;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 10px;
+  /*margin-left: 100px;*/
+}
+
+.sortText{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+}
+
 .card-club:hover{
   background-color: #b0d4e2;
   transition: 0.3s all;

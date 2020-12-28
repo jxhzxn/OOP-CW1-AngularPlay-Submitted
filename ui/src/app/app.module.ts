@@ -25,6 +25,7 @@ import { MatchesComponent } from './matches/matches.component';
 import {MatIconModule} from "@angular/material/icon";
 import {MatNativeDateModule} from "@angular/material/core";
 import {MatInputModule} from "@angular/material/input";
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 
 
@@ -35,7 +36,8 @@ const material = [
   MatSnackBarModule,
   MatTooltipModule,
   MatDatepickerModule,
-  MatNativeDateModule
+  MatNativeDateModule,
+  MatSlideToggleModule
 ]
 
 const routes: Routes = [
@@ -90,7 +92,8 @@ const routes: Routes = [
     MatDatepickerModule,
     MatIconModule,
     MatNativeDateModule,
-    MatInputModule
+    MatInputModule,
+    MatSlideToggleModule
   ],
   providers: [
     AppService,

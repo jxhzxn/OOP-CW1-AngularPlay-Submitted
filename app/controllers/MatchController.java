@@ -52,4 +52,12 @@ public class MatchController {
         JsonNode jsonData = mapper.convertValue(result, JsonNode.class);
         return ok(ApplicationUtil.createResponse(jsonData, true));
     }
+
+    public Result getAllMatchesSorted(){
+        MatchService ms = new MatchService();
+        Set<Match> result = ms.getAllMatchesSorted();
+        ObjectMapper mapper = new ObjectMapper();
+        JsonNode jsonData = mapper.convertValue(result, JsonNode.class);
+        return ok(ApplicationUtil.createResponse(jsonData, true));
+    }
 }
