@@ -213,6 +213,12 @@ margin-bottom: 15px;
   color: black;
 }
 
+.bolderr{
+  font-weight: 900;
+  transform: scale(1.055);
+  color: black;
+}
+
 .matchesExtraElements{
   display: flex;
   justify-content: center;

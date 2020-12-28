@@ -34,6 +34,18 @@
       </div>
     </div>
 
+    <div class="toggleContainer">
+      <div  [ngClass]="{'before': goalsAsc==false, 'after': goalsAsc==true}">
+        <mat-slide-toggle [(ngModel)]="goalsAsc" (click)="sortByGoalsAsc()"><span class="sortText">Goals <mat-icon>keyboard_arrow_up</mat-icon></span></mat-slide-toggle>
+      </div>
+    </div>
+
+    <div class="toggleContainer">
+      <div  [ngClass]="{'before': goalsDes==false, 'after': goalsDes==true}">
+        <mat-slide-toggle [(ngModel)]="goalsDes" (click)="sortByGoalsDes()"><span class="sortText">Goals <mat-icon>keyboard_arrow_down</mat-icon></span></mat-slide-toggle>
+      </div>
+    </div>
+
 
   </div>
   <div class="card-container">
@@ -41,8 +53,8 @@
 <div class="top-card-container">
   <div class="card">
       <p class="card-header clubName  ">Club Name</p>
-      <p class="card-header location  ">Location</p>
-      <p class="card-header homeGround">H Ground</p>
+<!--      <p class="card-header location  ">Location</p>-->
+<!--      <p class="card-header homeGround">H Ground</p>-->
       <p class="card-header defeats   ">Defeats</p>
       <p class="card-header draws     ">Draws</p>
       <p class="card-header received  ">G Received</p>
@@ -54,13 +66,13 @@
 </div>
 <!--<div class="card-club-container">-->
   <div class="card-club" *ngFor="let club of array">
-    <p class="card-element clubName     ">{{club.clubName}}</p>
-    <p class="card-element location     ">{{club.location}}</p>
-    <p class="card-element homeGround   ">{{club.homeGround}}</p>
+    <p class="card-element clubName bolderr">{{club.clubName}}</p>
+<!--    <p class="card-element location     ">{{club.location}}</p>-->
+<!--    <p class="card-element homeGround   ">{{club.homeGround}}</p>-->
     <p class="card-element defeats      ">{{club.nofDefeats}}</p>
     <p class="card-element draws        ">{{club.nofDraws}}</p>
     <p class="card-element received     ">{{club.nofGoalsReceived}}</p>
-    <p class="card-element scored       ">{{club.nofGoalsScored}}</p>
+    <p class="card-element scored       " [ngClass]="{'bolder': goalsAsc==true || goalsDes==true}">{{club.nofGoalsScored}}</p>
     <p class="card-element matches      ">{{club.nofMatches}}</p>
     <p class="card-element wins         " [ngClass]="{'bolder': winsAsc==true || winsDes==true}">{{club.nofWins}}</p>
     <p class="card-element points       " [ngClass]="{'bolder': pointsAsc==true || pointsDes==true}">{{club.nofPoints}}</p>

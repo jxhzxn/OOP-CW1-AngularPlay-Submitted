@@ -15,6 +15,8 @@ export class PointsTableComponent implements OnInit {
   pointsDes:boolean;
   winsAsc:boolean;
   winsDes:boolean;
+  goalsAsc:boolean;
+  goalsDes:boolean;
 
   array = []
 
@@ -27,6 +29,8 @@ export class PointsTableComponent implements OnInit {
     this.pointsDes=false;
     this.winsAsc=false;
     this.winsDes=false;
+    this.goalsAsc=false;
+    this.goalsDes=false;
   }
 
   public getClub(): void{
@@ -69,7 +73,7 @@ export class PointsTableComponent implements OnInit {
   }
 
   public sortByWinsDes(){
-    if(this.winsAsc==false){
+    if(this.winsDes==false){
       this.array.sort(function (a,b){
         return b.nofWins - a.nofWins
       })
@@ -77,6 +81,27 @@ export class PointsTableComponent implements OnInit {
       this.getClub()
     }
   }
+
+  public sortByGoalsAsc(){
+    if(this.goalsAsc==false){
+      this.array.sort(function (a,b){
+        return a.nofGoalsScored - b.nofGoalsScored
+      })
+    }else if(this.goalsAsc==true){
+      this.getClub()
+    }
+  }
+
+  public sortByGoalsDes(){
+    if(this.goalsDes==false){
+      this.array.sort(function (a,b){
+        return b.nofGoalsScored - a.nofGoalsScored
+      })
+    }else if(this.goalsDes==true){
+      this.getClub()
+    }
+  }
+
 
 
 
