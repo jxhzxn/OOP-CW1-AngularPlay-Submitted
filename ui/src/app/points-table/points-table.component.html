@@ -7,6 +7,35 @@
   <div class="headTextContainer">
     <p class="headText">Points Table</p>
   </div>
+
+  <div class="matchesExtraElements">
+
+    <div class="toggleContainer">
+      <div  [ngClass]="{'before': pointsAsc==false, 'after': pointsAsc==true}">
+        <mat-slide-toggle [(ngModel)]="pointsAsc" (click)="sortByPointAsc()"><span class="sortText">Points <mat-icon>keyboard_arrow_up</mat-icon></span></mat-slide-toggle>
+      </div>
+    </div>
+
+    <div class="toggleContainer">
+      <div  [ngClass]="{'before': pointsDes==false, 'after': pointsDes==true}">
+        <mat-slide-toggle [(ngModel)]="pointsDes" (click)="sortByPointDes()"><span class="sortText">Points <mat-icon>keyboard_arrow_down</mat-icon></span></mat-slide-toggle>
+      </div>
+    </div>
+
+    <div class="toggleContainer">
+      <div  [ngClass]="{'before': winsAsc==false, 'after': winsAsc==true}">
+        <mat-slide-toggle [(ngModel)]="winsAsc" (click)="sortByWinsAsc()"><span class="sortText">Wins <mat-icon>keyboard_arrow_up</mat-icon></span></mat-slide-toggle>
+      </div>
+    </div>
+
+    <div class="toggleContainer">
+      <div  [ngClass]="{'before': winsDes==false, 'after': winsDes==true}">
+        <mat-slide-toggle [(ngModel)]="winsDes" (click)="sortByWinsDes()"><span class="sortText">Wins <mat-icon>keyboard_arrow_down</mat-icon></span></mat-slide-toggle>
+      </div>
+    </div>
+
+
+  </div>
   <div class="card-container">
 
 <div class="top-card-container">
@@ -33,13 +62,12 @@
     <p class="card-element received     ">{{club.nofGoalsReceived}}</p>
     <p class="card-element scored       ">{{club.nofGoalsScored}}</p>
     <p class="card-element matches      ">{{club.nofMatches}}</p>
-    <p class="card-element wins         ">{{club.nofWins}}</p>
-    <p class="card-element points       ">{{club.nofPoints}}</p>
+    <p class="card-element wins         " [ngClass]="{'bolder': winsAsc==true || winsDes==true}">{{club.nofWins}}</p>
+    <p class="card-element points       " [ngClass]="{'bolder': pointsAsc==true || pointsDes==true}">{{club.nofPoints}}</p>
   </div>
 <!--</div>-->
   </div>
 </div>
-
 
 
 

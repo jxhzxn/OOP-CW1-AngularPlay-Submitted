@@ -37,7 +37,8 @@ const material = [
   MatTooltipModule,
   MatDatepickerModule,
   MatNativeDateModule,
-  MatSlideToggleModule
+  MatSlideToggleModule,
+  MatIconModule
 ]
 
 const routes: Routes = [
