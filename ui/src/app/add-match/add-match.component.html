@@ -73,7 +73,7 @@
         </div>
       </div>
       <div class="btnContainer">
-        <button [ngClass]="{'not-active': clubName1==null || clubName2==null || goal1==null || goal2==null, 'addBtn': clubName1!=null && clubName2!=null && goal1!=null && goal2!=null}" (click)="addMatch()">Add Match</button>
+        <button [ngClass]="{'not-active': clubName1.length==0 || clubName2.length==0 || goal1==null || goal2==null, 'addBtn': clubName1.length!=0 && clubName2.length!=0 && goal1!=null && goal2!=null}" (click)="addMatch()">Add Match</button>
 <!--        <button (click)="addMatch()">Add Match</button>-->
       </div>
     </div>

@@ -10,10 +10,25 @@
 
 
   <div class="form-container">
-    <input class="item" type="text" [(ngModel)]="clubName" placeholder="Club Name">
-    <input class="item" type="text" [(ngModel)]="location" placeholder="Club Location">
-    <input class="item" type="text" [(ngModel)]="homeGround" placeholder="Home Ground">
-    <button class="createBtn" (click)="createClub()">Create Club</button>
+
+    <mat-form-field class="example-full-width" class="matInput">
+      <mat-label>Club Name</mat-label>
+      <input matInput placeholder="Club Name" [(ngModel)]="clubName">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" class="matInput">
+      <mat-label>Location</mat-label>
+      <input matInput placeholder="Location" [(ngModel)]="location">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" class="matInput">
+      <mat-label>Home Ground</mat-label>
+      <input matInput placeholder="Home Ground" [(ngModel)]="homeGround">
+    </mat-form-field>
+
+<div class="btnContainer">
+  <button [ngClass]="{'not-active': clubName.length==0 || location.length==0 || homeGround.length==0, 'addBtn': clubName.length!=0 && location.length!=0 && homeGround.length!=0}" (click)="createClub()">Create Club</button>
+</div>
   </div>
 
 

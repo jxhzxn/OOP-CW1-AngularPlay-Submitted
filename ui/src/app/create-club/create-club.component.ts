@@ -6,22 +6,22 @@ import {AppService} from "../app.service";
   templateUrl: './create-club.component.html',
   styleUrls: ['./create-club.component.css']
 })
-export class CreateClubComponent{
-
-
+export class CreateClubComponent implements OnInit{
 
   title: string;
   postRequestResponse: string;
-  clubName: string;
-  location: string;
-  homeGround: string;
+  clubName = '';
+  location = '';
+  homeGround = '';
   nof_clubs : number;
-  chandira:number;
 
   constructor(private appService: AppService) {
     this.appService.getWelcomeMessage().subscribe((data: any) => {
       this.title = data.content;
     });
+  }
+
+  ngOnInit() {
   }
 
   /**
@@ -38,6 +38,9 @@ export class CreateClubComponent{
       this.appService.createClub(this.clubName,this.location,this.homeGround).subscribe((data: any) => {
         this.postRequestResponse = data.content;
         alert("Club Created");
+        this.homeGround = '';
+        this.location = '';
+        this.clubName = '';
       })
     }else{
       alert("All the Fields Should be Filled");
@@ -53,10 +56,10 @@ export class CreateClubComponent{
     })
   }
 
-  public getNumber():void{
-    this.appService.getNofClubs().subscribe((data:any) =>{
-      this.chandira=data.content;
-    })
-  }
+  // public getNumber():void{
+  //   this.appService.getNofClubs().subscribe((data:any) =>{
+  //     this.chandira=data.content;
+  //   })
+  // }
 
 }

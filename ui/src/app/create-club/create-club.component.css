@@ -3,25 +3,29 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  margin-top: 50px;
+
+  border-color: black;
+  border-width: 4px;
+  border-style: solid;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .item{
   margin: 10px;
 }
 
-.createBtn{
-  margin: 10px;
-  background-color: #ffa200;
-  border: none;
-  width: 120px;
-  height: 30px;
+.matInput{
+  font-family: 'Montserrat', sans-serif;
   font-size: 18px;
-  font-weight: bold;
-}
-
-.createBtn:hover{
-  background-color: #d08800;
-  cursor: pointer;
+  font-weight: 700;
+  /*padding: 20px;*/
+  width: 190px;
+  text-align: center;
 }
 
 .container{
@@ -60,3 +64,49 @@
   justify-content: center;
   align-items: center;
 }
+
+.not-active{
+  pointer-events: none;
+  /*background-color: #ff6961;*/
+  background-color: #77dd77;
+
+  margin: 10px;
+  font-size: 22px;
+  border: none;
+  height: 50px;
+  transition: 0.3s all;
+  border-radius: 5px;
+  padding: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+
+.addBtn{
+  margin: 10px;
+  font-size: 22px;
+  border: none;
+  height: 50px;
+  transition: 0.3s all;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
+  pointer-events: all;
+  background-color: #77dd77;
+  /*background-color: #ff6961;*/
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+
+}
+
+.addBtn:hover{
+  transition: 0.3s all;
+  transform: scale(1.025);
+}
+
+.btnContainer{
+  margin-top: 20px;
+}
+
+
