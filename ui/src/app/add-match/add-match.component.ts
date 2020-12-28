@@ -19,9 +19,9 @@ export class AddMatchComponent implements OnInit {
 
   date:object;
 
-  day:number;
-  month:number;
-  year:number;
+  day = null;
+  month = null;
+  year = null;
 
   minDate:Date;
   maxDate:Date;
@@ -50,7 +50,7 @@ export class AddMatchComponent implements OnInit {
       this.goal2=0;
     }
 
-    if(this.clubName1 == null || this.clubName2 == null){
+    if(this.clubName1 == null || this.clubName2 == null || this.day == null){
       alert("Fill Everything");
     }else{
 
