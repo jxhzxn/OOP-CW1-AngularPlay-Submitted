@@ -8,6 +8,7 @@ export class MatchesService {
 
   private getMatchesUrl = '/matches';
   private getMatchesSortedUrl = '/matchesSorted';
+  private getMatchesByDateUrl = '/matchesByDate';
 
   constructor(private http: HttpClient) { }
 
@@ -17,5 +18,10 @@ export class MatchesService {
 
   public getMatchesSorted() {
     return this.http.get(this.getMatchesSortedUrl)
+  }
+
+  public getMatchesByDate(day:number,month:number,year:number) {
+    let url = this.getMatchesByDateUrl+'/'+day+'/'+month+'/'+year;
+    return this.http.get(url)
   }
 }

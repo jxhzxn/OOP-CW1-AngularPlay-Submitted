@@ -5,10 +5,24 @@
 
 <div class="container">
   <div class="headTextContainer">
-    <p class="headText">Matches</p>
+    <p class="headText">Matches<br/><span *ngIf="date!=null && day!=null && month!=null && year!=null && dateChecker==true">&nbsp;On: &nbsp;{{day+'/'+month+'/'+year}}</span> <span *ngIf="test==true">&nbsp;Sorted&nbsp;By&nbsp;Date</span></p>
   </div>
-  <div [ngClass]="{'before': test==false, 'after': test==true}">
-    <mat-slide-toggle [(ngModel)]="test" (click)="getMatchesSorted()"><span class="sortText">Sort by Date</span></mat-slide-toggle>
+  <div class="matchesExtraElements">
+    <div class="toggleContainer">
+      <div [ngClass]="{'before': test==false, 'after': test==true}">
+        <mat-slide-toggle [(ngModel)]="test" (click)="getMatchesSorted()"><span class="sortText">Sort by Date</span></mat-slide-toggle>
+      </div>
+    </div>
+
+    <div class="date-container">
+    <mat-form-field class="calendarView" appearance="fill">
+      <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="dp"  [(ngModel)]="date" class="datePickerText">
+      <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+      <mat-datepicker #dp disabled="false"></mat-datepicker>
+    </mat-form-field>
+      <button class="sortBtn" (click)="dateCheck()">Find Matches</button>
+    </div>
+
   </div>
   <div class="card-container">
 

@@ -60,4 +60,12 @@ public class MatchController {
         JsonNode jsonData = mapper.convertValue(result, JsonNode.class);
         return ok(ApplicationUtil.createResponse(jsonData, true));
     }
+
+    public Result getAllMatchesByDate(int day, int month, int year){
+        MatchService ms = new MatchService();
+        Set<Match> result = ms.getAllMatchesByDate(day,month,year);
+        ObjectMapper mapper = new ObjectMapper();
+        JsonNode jsonData = mapper.convertValue(result, JsonNode.class);
+        return ok(ApplicationUtil.createResponse(jsonData, true));
+    }
 }
