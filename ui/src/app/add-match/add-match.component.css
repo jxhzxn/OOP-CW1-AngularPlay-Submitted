@@ -218,7 +218,8 @@ input[type=number] {
 .not-active{
   pointer-events: none;
   /*background-color: #ff6961;*/
-  background-color: #77dd77;
+  /*background-color: #77dd77;*/
+  background-color: #e85a6c;
 
   margin: 10px;
   font-size: 22px;
@@ -228,7 +229,7 @@ input[type=number] {
   border-radius: 5px;
   padding: 10px;
   font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 
@@ -242,11 +243,13 @@ input[type=number] {
   padding: 10px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
   pointer-events: all;
-  background-color: #77dd77;
+  /*background-color: #77dd77;*/
+  background-color: #e85a6c;
   /*background-color: #ff6961;*/
   cursor: pointer;
   font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
+  color: white;
+  font-weight: 800;
 
 }
 
