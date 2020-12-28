@@ -16,11 +16,15 @@ import { CreateClubComponent } from './create-club/create-club.component';
 import {MatTableModule} from '@angular/material';
 import {MatSelectModule} from '@angular/material/select';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBarModule} from '@angular/material/snack-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddMatchComponent } from './add-match/add-match.component';
 import { MatchesComponent } from './matches/matches.component';
+import {MatIconModule} from "@angular/material/icon";
+import {MatNativeDateModule} from "@angular/material/core";
+import {MatInputModule} from "@angular/material/input";
 
 
 
@@ -29,7 +33,9 @@ const material = [
   MatSelectModule,
   MatDialogModule,
   MatSnackBarModule,
-  MatTooltipModule
+  MatTooltipModule,
+  MatDatepickerModule,
+  MatNativeDateModule
 ]
 
 const routes: Routes = [
@@ -80,7 +86,11 @@ const routes: Routes = [
     }),
     RouterModule.forRoot(routes),
     BrowserAnimationsModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDatepickerModule,
+    MatIconModule,
+    MatNativeDateModule,
+    MatInputModule
   ],
   providers: [
     AppService,

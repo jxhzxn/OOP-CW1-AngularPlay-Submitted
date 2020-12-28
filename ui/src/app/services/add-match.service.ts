@@ -13,8 +13,8 @@ export class AddMatchService {
   constructor(private http: HttpClient) { }
 
 
-  public addMatch(clubName1:string,clubName2:string,goal1:number,goal2:number) : Observable<any> {
-    let url = this.addMatchUrl+clubName1+'/'+clubName2+'/'+goal1+'/'+goal2;
+  public addMatch(clubName1:string,clubName2:string,goal1:number,goal2:number,day:number,month:number,year:number) : Observable<any> {
+    let url = this.addMatchUrl+clubName1+'/'+clubName2+'/'+goal1+'/'+goal2+'/'+day+'/'+month+'/'+year;
     return this.http.post(url,{});
   }
 

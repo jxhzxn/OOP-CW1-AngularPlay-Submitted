@@ -28,11 +28,11 @@ public class MatchController {
 //        return ok(jsonNode).as("application/json");
 //    }
 
-    public Result addMatch(String clubName1, String clubName2, int goal1, int goal2){
+    public Result addMatch(String clubName1, String clubName2, int goal1, int goal2,int day, int month, int year){
         PremierLeagueManager premierLeagueManager = new PremierLeagueManager();
         PremierLeagueManager plm = premierLeagueManager.plmCheck();
         MatchService ms = new MatchService();
-        Date date = new Date(20,12,2020);
+        Date date = new Date(day,month,year);
 //        ms.addMatch("Sri Lanka","Australia",2,1,date);
 
         Set<Match> result = ms.addMatch(clubName1,clubName2,goal1,goal2,date);

@@ -245,6 +245,10 @@ input[type=number] {
   background-color: #ff6961;
   padding: 20px;
   border-radius: 10px;
+  width: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 

@@ -9,7 +9,7 @@ GET     /*file                                                    controllers.Fr
 POST    /api/postTest                                             controllers.HomeController.postTest()
 POST     /api/createPerson/:clubName/:location/:homeGround        controllers.FootballClubController.createFootballClub(clubName:String,location:String,homeGround:String)
 POST     /api/getNofClubs                                         controllers.FootballClubController.getNofClubs
-POST     /addMatch/:clubName1/:clubName2/:goal1/:goal2            controllers.MatchController.addMatch(clubName1:String,clubName2:String,goal1:Int,goal2:Int)
+POST     /addMatch/:clubName1/:clubName2/:goal1/:goal2/:day/:month/:year            controllers.MatchController.addMatch(clubName1:String,clubName2:String,goal1:Int,goal2:Int,day:Int,month:Int,year:Int)
 #POST     /addMatch                                                 controllers.MatchController.addMatch
 
 
