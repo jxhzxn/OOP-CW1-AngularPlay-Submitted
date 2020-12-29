@@ -30,7 +30,7 @@
 
 <!--            <div class="clubInput">-->
             <mat-form-field class="test" appearance="fill">
-              <mat-label class="datePickerHead">Club One</mat-label>
+              <mat-label class="datePickerHead">Choose Club</mat-label>
               <mat-select [(ngModel)]="clubName1" class="input-name">
                 <mat-option *ngFor="let club of array" [value]="club.clubName"  class="input-name">
                   {{club.clubName}}
@@ -56,7 +56,7 @@
 
 <!--            <div class="clubInput">-->
               <mat-form-field class="test" appearance="fill">
-                <mat-label class="datePickerHead">Club Two</mat-label>
+                <mat-label class="datePickerHead">Choose Club</mat-label>
                 <mat-select [(ngModel)]="clubName2" class="input-name">
                   <mat-option *ngFor="let club of array" [value]="club.clubName" class="input-name">
                     {{club.clubName}}

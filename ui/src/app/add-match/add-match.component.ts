@@ -68,25 +68,31 @@ export class AddMatchComponent implements OnInit {
       this.goal2=0;
     }
 
-    if(this.clubName1 == null || this.clubName2 == null || this.day == null){
+    if(Object.keys(this.date).length>0){
       Swal.fire('Complete Filling', 'All the fields should be filled', 'warning')
     }else{
 
       this.addMatchService.addMatch(this.clubName1,this.clubName2,this.goal1,this.goal2,this.day,this.month,this.year).subscribe((data: any) => {
-        Swal.fire('Match Added', ''
-          // +
-          // '<div style="display: flex; justify-content: center; align-items: center; flex-direction: column">' +
-          // '<div><h2><b>'+this.clubName1+' ('+this.goal1+') vs '+this.clubName2+' ('+this.goal2+')</b></h2></div>' +
-          // '<div style="margin: 0"><h2><b>'+'Played on - '+this.day+'/'+this.month+'/'+this.year+'</b></h2></div>' +
-          // '</div>'
-          , 'success')
-        this.clubName1 = '';
-        this.clubName2 = '';
-        this.goal1 = null;
-        this.goal2 = null;
-        this.day = null;
-        this.month = null;
-        this.year = null;
+        if(this.clubName1!=this.clubName2){
+          Swal.fire('Match Added', ''
+            // +
+            // '<div style="display: flex; justify-content: center; align-items: center; flex-direction: column">' +
+            // '<div><h2><b>'+this.clubName1+' ('+this.goal1+') vs '+this.clubName2+' ('+this.goal2+')</b></h2></div>' +
+            // '<div style="margin: 0"><h2><b>'+'Played on - '+this.day+'/'+this.month+'/'+this.year+'</b></h2></div>' +
+            // '</div>'
+            , 'success')
+          this.clubName1 = '';
+          this.clubName2 = '';
+          this.goal1 = null;
+          this.goal2 = null;
+          this.day = null;
+          this.month = null;
+          this.year = null;
+        }else if(this.clubName1==this.clubName2){
+          Swal.fire('Both are same Clubs', 'Choose two different Clubs', 'warning')
+          this.clubName1 = '';
+          this.clubName2 = '';
+        }
       })
     }
 
