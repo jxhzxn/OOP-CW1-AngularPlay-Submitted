@@ -35,6 +35,7 @@ export class PointsTableComponent implements OnInit {
 
   public getClub(): void{
     this.pointsTableService.getClub().subscribe((data: any) => {
+      document.getElementById('loading').style.display = 'none';
       this.array = data.response;
     })
   }

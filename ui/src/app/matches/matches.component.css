@@ -324,3 +324,28 @@
 .dateHead{
   font-size: 18px;
 }
+
+/*loader*/
+#loading{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: 10px 0 0 -75px;
+  border: 16px solid #e85a6c;
+  border-radius: 50%;
+  border-top: 16px solid #f3f3f3;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

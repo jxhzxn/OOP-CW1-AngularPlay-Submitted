@@ -36,6 +36,13 @@
         <p class="card-header draws     ">Goals</p>
       </div>
     </div>
+
+    <div class="d-flex justify-content-center">
+      <div class="spinner-border" role="status" >
+        <span class="sr-only" id="loading"></span>
+      </div>
+    </div>
+
     <!--<div class="card-club-container">-->
     <div class="card-club" *ngFor="let match of array">
       <p class="card-element clubName     " [ngClass]="{'bold':test==true}">{{match.date.day+'/'+match.date.month+'/'+match.date.year}}</p>

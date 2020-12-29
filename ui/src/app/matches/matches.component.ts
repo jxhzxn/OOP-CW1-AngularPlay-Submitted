@@ -34,6 +34,7 @@ export class MatchesComponent implements OnInit {
 
   public getMatches(): void{
       this.matchesService.getMatches().subscribe((data: any) => {
+        document.getElementById('loading').style.display = 'none';
         this.array = data.response;
         console.log(data.response)
       })
@@ -46,11 +47,13 @@ export class MatchesComponent implements OnInit {
     this.dateChecker=false;
     if(this.test==false){
       this.matchesService.getMatchesSorted().subscribe((data: any) => {
+        document.getElementById('loading').style.display = 'none';
         this.array = data.response;
         console.log(data.response)
       })
     }else if(this.test==true){
       this.matchesService.getMatches().subscribe((data: any) => {
+        document.getElementById('loading').style.display = 'none';
         this.array = data.response;
         console.log(data.response)
       })
@@ -76,6 +79,7 @@ export class MatchesComponent implements OnInit {
       console.log(this.year);
     }
     this.matchesService.getMatchesByDate(this.day,this.month,this.year).subscribe((data: any) => {
+      document.getElementById('loading').style.display = 'none';
       this.array = data.response;
       if(data.response.length==0){
         Swal.fire('No Matches Found', 'No matches were played on - '+this.day+'/'+this.month+'/'+this.year, 'warning')

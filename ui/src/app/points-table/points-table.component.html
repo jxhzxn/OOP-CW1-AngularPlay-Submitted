@@ -3,6 +3,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
+<!--<div class="d-flex justify-content-center">-->
+<!--  <div class="spinner-border" role="status" >-->
+<!--    <span class="sr-only" id="loading"></span>-->
+<!--  </div>-->
+<!--</div>-->
+
 <div class="container">
   <div class="headTextContainer">
     <p class="headText">Points Table</p>
@@ -66,6 +72,16 @@
       <p class="card-header points    ">Points</p>
   </div>
 </div>
+
+
+    <div class="d-flex justify-content-center">
+      <div class="spinner-border" role="status" >
+        <span class="sr-only" id="loading"></span>
+      </div>
+    </div>
+
+
+
 <!--<div class="card-club-container">-->
   <div class="card-club" *ngFor="let club of array">
     <p class="card-element clubName bolderr">{{club.clubName}}</p>
