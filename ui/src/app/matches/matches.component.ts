@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MatchesService} from "../services/matches.service";
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-matches',
@@ -76,7 +77,12 @@ export class MatchesComponent implements OnInit {
     }
     this.matchesService.getMatchesByDate(this.day,this.month,this.year).subscribe((data: any) => {
       this.array = data.response;
-      console.log(data.response)
+      if(data.response.length==0){
+        Swal.fire('No Matches Found', 'No matches were played on - '+this.day+'/'+this.month+'/'+this.year, 'warning')
+      }
+      // else{
+      //   Swal.fire(data.response.length+' Matches Found', '', 'success')
+      // }
     })
   }
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AppService} from "../app.service";
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-create-club',
@@ -37,13 +38,20 @@ export class CreateClubComponent implements OnInit{
     if(this.clubName!=null && this.location!=null && this.homeGround!=null){
       this.appService.createClub(this.clubName,this.location,this.homeGround).subscribe((data: any) => {
         this.postRequestResponse = data.content;
-        alert("Club Created");
+        Swal.fire('Club Created', ''
+          // +
+          // '<div style="display: flex; justify-content: center; align-items: center; flex-direction: column">' +
+          // '<h2><b>'+'Club Name - '+this.clubName+'</b></h2>' +
+          // '<h2><b>'+'Location - '+this.location+'</b></h2>' +
+          // '<h2><b>'+'Home Ground - '+this.homeGround+'</b></h2>' +
+          // '</div>'
+          , 'success')
         this.homeGround = '';
         this.location = '';
         this.clubName = '';
       })
     }else{
-      alert("All the Fields Should be Filled");
+      Swal.fire('Complete Filling', 'All the fields should be filled', 'warning')
     }
 
   }

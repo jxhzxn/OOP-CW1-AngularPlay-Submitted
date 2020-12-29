@@ -225,7 +225,7 @@ public class PremierLeagueManager implements Serializable,LeagueManager {
     public ArrayList<FootballClub> sortTable(ArrayList<FootballClub> toSort){
         ArrayList<ArrayList<FootballClub>> toReturn = new ArrayList<>();
         if(toSort.size()==1){
-
+            toReturn.add(toSort);
         }else {
             for (int y = 1; y <= toSort.size() - 1; y++) {
                 for (int j = 1; j <= toSort.size() - 1; j++) {
@@ -319,7 +319,7 @@ public class PremierLeagueManager implements Serializable,LeagueManager {
     public ArrayList<Match> sortTableDate(ArrayList<Match> matchesArray){
         ArrayList<ArrayList<Match>> toReturn = new ArrayList<>();
         if(matchesArray.size()==1){
-
+            toReturn.add(matchesArray);
         }else {
             for (int y = 1; y <= matchesArray.size() - 1; y++) {
                 for (int x = 1; x <= matchesArray.size() - 1; x++) {

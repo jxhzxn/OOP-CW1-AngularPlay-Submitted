@@ -197,6 +197,12 @@
   font-weight: 800;
 }
 
+.bolder{
+  font-weight: 900;
+  transform: scale(1.2);
+  color: black;
+}
+
 .sortBtn{
   background: none;
   height: 100%;

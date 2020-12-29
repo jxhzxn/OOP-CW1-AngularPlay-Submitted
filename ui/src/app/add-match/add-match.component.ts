@@ -2,6 +2,7 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {AddMatchService} from "../services/add-match.service";
 import {matSnackBarAnimations} from "@angular/material/snack-bar";
 import {SnackBarOverviewExample} from "../services/custom-alert.service";
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add-match',
@@ -68,11 +69,17 @@ export class AddMatchComponent implements OnInit {
     }
 
     if(this.clubName1 == null || this.clubName2 == null || this.day == null){
-      alert("Fill Everything");
+      Swal.fire('Complete Filling', 'All the fields should be filled', 'warning')
     }else{
 
       this.addMatchService.addMatch(this.clubName1,this.clubName2,this.goal1,this.goal2,this.day,this.month,this.year).subscribe((data: any) => {
-        alert("Match Added");
+        Swal.fire('Match Added', ''
+          // +
+          // '<div style="display: flex; justify-content: center; align-items: center; flex-direction: column">' +
+          // '<div><h2><b>'+this.clubName1+' ('+this.goal1+') vs '+this.clubName2+' ('+this.goal2+')</b></h2></div>' +
+          // '<div style="margin: 0"><h2><b>'+'Played on - '+this.day+'/'+this.month+'/'+this.year+'</b></h2></div>' +
+          // '</div>'
+          , 'success')
         this.clubName1 = '';
         this.clubName2 = '';
         this.goal1 = null;
@@ -114,6 +121,16 @@ export class AddMatchComponent implements OnInit {
     this.addMatchService.getClub().subscribe((data: any) => {
       this.array = data.response;
     })
+  }
+
+  public jxhzxn(): void{
+    this.click()
+    Swal.fire('Match Added', '' +
+      '<div style="display: flex; justify-content: center; align-items: center; flex-direction: column">' +
+      '<div><h2><b>'+this.clubName1+' ('+this.goal1+') vs '+this.clubName2+' ('+this.goal2+')</b></h2></div>' +
+      '<div style="margin: 0"><h2><b>'+'Played on - '+this.day+'/'+this.month+'/'+this.year+'</b></h2></div>' +
+      '</div>'
+      , 'success')
   }
 
 }

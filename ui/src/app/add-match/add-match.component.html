@@ -1,6 +1,7 @@
 <head>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
 
 <div class="containerOne">
@@ -74,7 +75,7 @@
       </div>
       <div class="btnContainer">
         <button [ngClass]="{'not-active': clubName1.length==0 || clubName2.length==0 || goal1==null || goal2==null, 'addBtn': clubName1.length!=0 && clubName2.length!=0 && goal1!=null && goal2!=null}" (click)="addMatch()">Add Match</button>
-        <button class="addBtn">Generate Match</button>
+        <button class="addBtn" (click)="jxhzxn()">Generate Match</button>
 <!--        <button (click)="addMatch()">Add Match</button>-->
       </div>
     </div>
