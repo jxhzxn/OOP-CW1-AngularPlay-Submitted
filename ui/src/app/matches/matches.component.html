@@ -28,6 +28,7 @@
 
     <div class="top-card-container">
       <div class="card">
+        <p class="card-header clubName  ">#</p>
         <p class="card-header clubName  ">Date</p>
         <p class="card-header location  ">Club Name</p>
         <p class="card-header homeGround">Goals</p>
@@ -45,6 +46,7 @@
 
     <!--<div class="card-club-container">-->
     <div class="card-club" *ngFor="let match of array">
+      <p class="card-element clubName">{{array.indexOf(match)+1}}.</p>
       <p class="card-element clubName     " [ngClass]="{'bold':test==true}">{{match.date.day+'/'+match.date.month+'/'+match.date.year}}</p>
       <p class="card-element location     " [ngClass]="{'bold':match.team1Score>match.team2Score}">{{match.team1.clubName}}</p>
       <p class="card-element homeGround   " [ngClass]="{'bold':match.team1Score>match.team2Score}">{{match.team1Score}}</p>
