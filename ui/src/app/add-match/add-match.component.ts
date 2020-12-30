@@ -30,6 +30,8 @@ export class AddMatchComponent implements OnInit {
 
   array=[]
 
+  lastMatchArray = []
+
   ngOnInit() {
     this.getClub()
     this.minDate = new Date(2020,9,1)
@@ -133,14 +135,26 @@ export class AddMatchComponent implements OnInit {
     })
   }
 
-  public jxhzxn(): void{
-    this.click()
-    Swal.fire('Match Added', '' +
-      '<div style="display: flex; justify-content: center; align-items: center; flex-direction: column">' +
-      '<div><h2><b>'+this.clubName1+' ('+this.goal1+') vs '+this.clubName2+' ('+this.goal2+')</b></h2></div>' +
-      '<div style="margin: 0"><h2><b>'+'Played on - '+this.day+'/'+this.month+'/'+this.year+'</b></h2></div>' +
-      '</div>'
-      , 'success')
+  public generateMatch(): void{
+    this.addMatchService.generateMatch().subscribe((data: any) =>{
+      this.lastMatchArray = data.response
+      console.log(data.response.date.day)
+
+      let day = ''+data.response.date.day;
+      let month = ''+data.response.date.month;
+      let year = ''+data.response.date.year;
+      let goal11 = ''+data.response.team1Score;
+      let goal22 = ''+data.response.team2Score;
+
+      console.log(typeof(day))
+
+      Swal.fire('Match Generated', '' +
+        '<div style="display: flex; justify-content: center; align-items: center; flex-direction: column">' +
+        '<div><h2><b>'+data.response.team1.clubName+' ('+goal11+') vs '+data.response.team2.clubName+' ('+goal22+')</b></h2></div>' +
+        '<div style="margin: 0"><h2><b>'+'Played on - '+day+'/'+month+'/'+year+'</b></h2></div>' +
+        '</div>'
+        , 'success')
+    })
   }
 
 }

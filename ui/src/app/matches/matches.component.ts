@@ -61,6 +61,8 @@ export class MatchesComponent implements OnInit {
   }
 
   public dateCheck(): void{
+    this.array = [];
+    document.getElementById('loading').style.display = '';
     this.dateChecker=true;
     if(this.date.toLocaleString().length>=23){
       this.day = parseInt(this.date.toLocaleString().slice(3,5))

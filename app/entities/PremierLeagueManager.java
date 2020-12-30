@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class PremierLeagueManager implements Serializable,LeagueManager {
 
@@ -352,6 +353,28 @@ public class PremierLeagueManager implements Serializable,LeagueManager {
             plm = new PremierLeagueManager();
         }
         return plm;
+    }
+
+    public void generateRandomMatch(){
+        int team1Name = ThreadLocalRandom.current().nextInt(0, getClubsArray().size());
+        int team2Name = ThreadLocalRandom.current().nextInt(0, getClubsArray().size());
+        int team1Score = ThreadLocalRandom.current().nextInt(0, 6);
+        int team2Score = ThreadLocalRandom.current().nextInt(0, 6);
+        int day = ThreadLocalRandom.current().nextInt(1, 31);
+        int month = ThreadLocalRandom.current().nextInt(10, 13);
+//            int year = ThreadLocalRandom.current().nextInt(20, 32);
+
+        Date randomDate = new Date(day,month,2020);
+
+        while(team1Name==team2Name){
+            team2Name = ThreadLocalRandom.current().nextInt(0, getClubsArray().size());
+        }
+
+        addMatch(getClubsArray().get(team1Name).getClubName(),getClubsArray().get(team2Name).getClubName(),team1Score,team2Score,randomDate);
+    }
+
+    public Match getLastMatch(){
+        return getPlayedMatches().get(getPlayedMatches().size()-1);
     }
 
 

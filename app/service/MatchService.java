@@ -77,4 +77,12 @@ public class MatchService {
         PremierLeagueManager plm = premierLeagueManager.plmCheck();
         return new LinkedHashSet<>(plm.getFilteredMatches(day,month,year));
     }
+
+    public Match generateRandomMatch(){
+        PremierLeagueManager premierLeagueManager = new PremierLeagueManager();
+        PremierLeagueManager plm = premierLeagueManager.plmCheck();
+        plm.generateRandomMatch();
+        plm.saveInstance(plm);
+        return plm.getLastMatch();
+    }
 }

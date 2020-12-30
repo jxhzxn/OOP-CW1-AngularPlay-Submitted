@@ -12,6 +12,7 @@ POST    /api/postTest                                             controllers.Ho
 POST     /api/createPerson/:clubName/:location/:homeGround        controllers.FootballClubController.createFootballClub(clubName:String,location:String,homeGround:String)
 POST     /api/getNofClubs                                         controllers.FootballClubController.getNofClubs
 POST     /addMatch/:clubName1/:clubName2/:goal1/:goal2/:day/:month/:year            controllers.MatchController.addMatch(clubName1:String,clubName2:String,goal1:Int,goal2:Int,day:Int,month:Int,year:Int)
+POST    /generateMatch                                            controllers.MatchController.generateRandomMatch
 #POST     /addMatch                                                 controllers.MatchController.addMatch
 
 

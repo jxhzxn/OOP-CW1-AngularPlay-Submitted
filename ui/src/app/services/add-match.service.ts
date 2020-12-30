@@ -9,6 +9,7 @@ export class AddMatchService {
 
   private addMatchUrl = '/addMatch/';
   private getClubUrl = '/footballClubs';
+  private generateMatchUrl = '/generateMatch';
 
   constructor(private http: HttpClient) { }
 
@@ -20,5 +21,9 @@ export class AddMatchService {
 
   public getClub() {
     return this.http.get(this.getClubUrl)
+  }
+
+  public generateMatch(){
+    return this.http.post(this.generateMatchUrl,{});
   }
 }

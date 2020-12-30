@@ -68,4 +68,12 @@ public class MatchController {
         JsonNode jsonData = mapper.convertValue(result, JsonNode.class);
         return ok(ApplicationUtil.createResponse(jsonData, true));
     }
+
+    public Result generateRandomMatch(){
+        MatchService ms = new MatchService();
+        Match match = ms.generateRandomMatch();
+        ObjectMapper mapper = new ObjectMapper();
+        JsonNode jsonData = mapper.convertValue(match, JsonNode.class);
+        return ok(ApplicationUtil.createResponse(jsonData, true));
+    }
 }
