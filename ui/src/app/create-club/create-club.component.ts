@@ -15,6 +15,7 @@ export class CreateClubComponent implements OnInit{
   location = '';
   homeGround = '';
   nof_clubs : number;
+  clubArray = [];
 
   constructor(private appService: AppService) {
     this.appService.getWelcomeMessage().subscribe((data: any) => {
@@ -23,6 +24,7 @@ export class CreateClubComponent implements OnInit{
   }
 
   ngOnInit() {
+    this.clubCheck()
   }
 
   /**
@@ -35,6 +37,16 @@ export class CreateClubComponent implements OnInit{
   }
 
   public createClub(): void{
+    for(var x=0; x<=this.clubArray.length-1; x++){
+      console.log(this.clubArray[x].clubName)
+      if(this.clubArray[x].clubName==this.clubName){
+        Swal.fire('"'+this.clubName+'" is Already Added', '', 'warning');
+        this.homeGround = '';
+        this.location = '';
+        this.clubName = '';
+        return;
+      }
+    }
     if(this.clubName!=null && this.location!=null && this.homeGround!=null){
       this.appService.createClub(this.clubName,this.location,this.homeGround).subscribe((data: any) => {
         this.postRequestResponse = data.content;
@@ -56,18 +68,11 @@ export class CreateClubComponent implements OnInit{
 
   }
 
-  public getClub(): void{
+  public clubCheck(): void{
     this.appService.getClub().subscribe((data: any) => {
-      this.nof_clubs = data.response.length;
-      var tested = Object.keys(data);
-      console.log(data.response);
+      this.clubArray = data.response;
     })
   }
 
-  // public getNumber():void{
-  //   this.appService.getNofClubs().subscribe((data:any) =>{
-  //     this.chandira=data.content;
-  //   })
-  // }
 
 }

@@ -1,7 +1,6 @@
 package entities;
 
-import java.io.FileOutputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -59,7 +58,10 @@ public class Main {
                         Scanner input1 = new Scanner(System.in);
                         Scanner input2 = new Scanner(System.in);
                         Scanner input3 = new Scanner(System.in);
+                        System.out.println("");
                         System.out.println("Add a Match");
+                        System.out.println("");
+                        System.out.println("01/10/2020 - 31/12/2020");
                         System.out.println("-------------------");
                         System.out.println("");
                         System.out.print("Enter the Day  :   ");
@@ -98,7 +100,19 @@ public class Main {
                     plm.saveInstance(plm);
                     System.exit(1);
                 }else if(option==6){
-                    System.out.println("Angular");
+//                    String command = "sbt run";
+//                    try {
+//                        Process poc = Runtime.getRuntime().exec(command);
+//                        BufferedReader reader = new BufferedReader(new InputStreamReader(poc.getInputStream()));
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+//                    System.out.println("");
+//                    System.out.print("Opening the GUI in Browser");
+//                    System.out.print(".");
+//                    System.out.print(".");
+//                    System.out.print(".");
+//                    System.out.println("");
                 }
                 if(plm.decide().equals("x")){
                     plm = premierLeagueManager.plmCheck();
