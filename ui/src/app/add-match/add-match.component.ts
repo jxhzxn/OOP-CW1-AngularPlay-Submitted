@@ -63,17 +63,16 @@ export class AddMatchComponent implements OnInit {
       console.log(this.year);
     }
 
-    if(this.goal1==null){
-      this.goal1=0;
-    }
-    if(this.goal2==null){
-      this.goal2=0;
-    }
+
 
     if(this.clubName1==this.clubName2){
       Swal.fire('Both are same Clubs', 'Choose two different Clubs', 'warning')
       this.clubName1 = '';
       this.clubName2 = '';
+    }else  if(this.goal1<0 || this.goal2<0){
+      this.goal1 = null;
+      this.goal2 = null;
+      Swal.fire('Invalid Goal Count', '', 'warning')
     }else{
       this.addMatchService.addMatch(this.clubName1,this.clubName2,this.goal1,this.goal2,this.day,this.month,this.year).subscribe((data: any) => {
         if(this.clubName1!=this.clubName2){

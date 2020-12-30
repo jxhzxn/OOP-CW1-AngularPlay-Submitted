@@ -13,15 +13,16 @@ public class PremierLeagueManager implements Serializable,LeagueManager {
     private ArrayList<Match> playedMatches = new ArrayList<>();
 
     @Override
-    public SportsClub createClub(String clubName,String location,String homeground) {
-//        Scanner input = new Scanner(System.in);
-//        System.out.print("Name of the Club  :   ");
-//        String clubName = input.nextLine();
-//        System.out.print("Location of the Club  :   ");
-//        String location = input.nextLine();
-//        System.out.print("Homeground  :   ");
-//        String homeground = input.nextLine();
-
+    public void createClub(String clubName, String location, String homeground) {
+        ArrayList<SportsClub> toReturn = new ArrayList<>();
+        for(FootballClub club: getClubsArray()){
+            if(club.getClubName().equals(clubName)){
+                System.out.println("");
+                System.out.println("Club Already exists");
+                System.out.println("");
+                return;
+            }
+        }
         FootballClub newClub = new FootballClub(location,clubName,homeground,0,0,0,0,0,0,0);
 
         clubsArray.add(newClub);
@@ -30,13 +31,12 @@ public class PremierLeagueManager implements Serializable,LeagueManager {
         System.out.println("");
         System.out.println("[[ Registered Clubs    :   "+clubsArray.size()+" ]]");
         System.out.println("");
-        return newClub;
     }
 
     @Override
     public void deleteClub(String clubName) {
         if (clubsArray.isEmpty()) {
-            System.out.println("No clubs added to PL");
+            System.out.println("No Clubs added yet");
         } else {
             for (FootballClub club : clubsArray) {
                 if (club.getClubName().equals(clubName)) {
@@ -44,22 +44,13 @@ public class PremierLeagueManager implements Serializable,LeagueManager {
                     System.out.println("club removed");
                     break;
                 }
-                System.out.println("Invalid club name");
             }
+            System.out.println("");
+            System.out.println(clubName+" doesn't exist");
+            System.out.println("");
         }
     }
 
-//    public void testThis(){
-//        try{
-//            FileInputStream fis = new FileInputStream("club.ser");
-//            ObjectInputStream ois = new ObjectInputStream(fis);
-//            PremierLeagueManager plm = (PremierLeagueManager) ois.readObject();
-//            System.out.println(plm.toString());
-//            ois.close();
-//        }catch(Exception ex){
-//            ex.printStackTrace();
-//        }
-//    }
 
     public void consoleRun(){
         System.out.println("");
@@ -79,7 +70,6 @@ public class PremierLeagueManager implements Serializable,LeagueManager {
     @Override
     public void displayTable(){
 
-//        System.out.println(clubsArray.size());
         sortTable(getClubsArray());
 
         System.out.println("");
@@ -95,28 +85,24 @@ public class PremierLeagueManager implements Serializable,LeagueManager {
 
     @Override
     public void addMatch(String team1Name,String team2Name, int team1Score, int team2Score, Date matchDate){
-//        Scanner input = new Scanner(System.in);
-//        Scanner input2 = new Scanner(System.in);
-//        Scanner input3 = new Scanner(System.in);
-//        String teamWon = null;
-//        System.out.println("Add a Match");
-//        System.out.println("-------------------");
-//        System.out.println("");
-//        System.out.print("Enter the Day  :   ");
-//            int day = input.nextInt();
-//        System.out.print("Enter the Month  :   ");
-//            int month = input.nextInt();
-//        System.out.print("Enter the Year  :   ");
-//            int year = input.nextInt();
-//        Date matchDate = new Date(day,month,year);
-//        System.out.print("Team 1    :   ");
-//        String team1Name = input2.nextLine();
-//        System.out.print("Team 2    :   ");
-//        String team2Name = input3.nextLine();
-//        System.out.print(team1Name+" Score    :   ");
-//            int team1Score = input.nextInt();
-//        System.out.print(team2Name+" Score    :   ");
-//            int team2Score = input.nextInt();
+
+        ArrayList<String> checkArray = new ArrayList<>();
+
+        for(FootballClub club: getClubsArray()){
+            if(team1Name.equals(club.getClubName())){
+                checkArray.add("xx");
+            }
+            if(team2Name.equals(club.getClubName())){
+                checkArray.add("xx");
+            }
+        }
+
+        if(checkArray.size()<2){
+            System.out.println("");
+            System.out.println("Add Match of Registered Clubs");
+            System.out.println("");
+            return;
+        }
 
         String teamWon = null;
 
@@ -197,13 +183,26 @@ public class PremierLeagueManager implements Serializable,LeagueManager {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter the Club name :   ");
         String selected = input.nextLine();
-        FootballClub club = getClub(selected);
-        System.out.println("");
-        System.out.println("[[ Statistics of "+club.getClubName()+" ]]");
-        System.out.println("");
-        System.out.printf("%-20s%-10s%-15s%-18s%-8s%-10s%-10s%-10s\n", "Club","Matches","GoalsScored","GoalsReceived","Wins","Draws","Defeats","Points");
-        System.out.printf("%-20s%-10s%-15s%-18s%-8s%-10s%-10s%-10s\n", "----","-------","------------","--------------","----","-----","-------","------");
-        System.out.printf("%-20s%-10d%-15d%-18d%-8d%-10d%-10d%-10d\n",club.getClubName(),club.getNofMatches(),club.getNofGoalsScored(),club.getNofGoalsReceived(),club.getNofWins(),club.getNofDraws(),club.getNofDefeats(),club.getNofPoints());
+        ArrayList<String> array = new ArrayList<>();
+        for(FootballClub club: getClubsArray()){
+            if(club.getClubName().equals(selected)){
+                array.add("xx");
+            }
+        }
+        if(array.size()==0){
+            System.out.println("");
+            System.out.println(selected+" doesn't exist");
+        }else{
+            FootballClub clubb = getClub(selected);
+            System.out.println("");
+            System.out.println("[[ Statistics of "+clubb.getClubName()+" ]]");
+            System.out.println("");
+            System.out.printf("%-20s%-10s%-15s%-18s%-8s%-10s%-10s%-10s\n", "Club","Matches","GoalsScored","GoalsReceived","Wins","Draws","Defeats","Points");
+            System.out.printf("%-20s%-10s%-15s%-18s%-8s%-10s%-10s%-10s\n", "----","-------","------------","--------------","----","-----","-------","------");
+            System.out.printf("%-20s%-10d%-15d%-18d%-8d%-10d%-10d%-10d\n",clubb.getClubName(),clubb.getNofMatches(),clubb.getNofGoalsScored(),clubb.getNofGoalsReceived(),clubb.getNofWins(),clubb.getNofDraws(),clubb.getNofDefeats(),clubb.getNofPoints());
+        }
+
+
     }
 
     public String decide(){
@@ -214,14 +213,6 @@ public class PremierLeagueManager implements Serializable,LeagueManager {
         System.out.println("");
         return option;
     }
-
-//    public void test(){
-//        System.out.println("test");
-//    }
-//
-//    public void test1(){
-//        System.out.println("test1");
-//    }
 
     public ArrayList<FootballClub> sortTable(ArrayList<FootballClub> toSort){
         ArrayList<ArrayList<FootballClub>> toReturn = new ArrayList<>();
@@ -288,34 +279,9 @@ public class PremierLeagueManager implements Serializable,LeagueManager {
             if(match.getDate().getDay()==day && match.getDate().getMonth()==month && match.getDate().getYear()==year){
                 sorted.add(match);
             }
-//            if(match.getDate().getDay()==year){
-//                sorted.add(match);
-//            }
         }
         return sorted;
     }
-
-//    public void sortTableDate(){
-//        if(getPlayedMatches().size()==1){
-//
-//        }else {
-//            for (int y = 1; y <= getPlayedMatches().size() - 1; y++) {
-//                for (int x = 1; x <= getPlayedMatches().size() - 1; x++) {
-//                    if (getPlayedMatches().get(x).getDate().getYear() < getPlayedMatches().get(x - 1).getDate().getYear()) {
-//                        Collections.swap(getPlayedMatches(), x, x - 1);
-//                    }if(getPlayedMatches().get(x).getDate().getYear() == getPlayedMatches().get(x - 1).getDate().getYear()) {
-//                        if (getPlayedMatches().get(x).getDate().getMonth() < getPlayedMatches().get(x - 1).getDate().getMonth()) {
-//                            Collections.swap(getPlayedMatches(), x, x - 1);
-//                        }
-//                    }if(getPlayedMatches().get(x).getDate().getMonth() == getPlayedMatches().get(x - 1).getDate().getMonth()){
-//                        if (getPlayedMatches().get(x).getDate().getDay() < getPlayedMatches().get(x - 1).getDate().getDay()) {
-//                            Collections.swap(getPlayedMatches(), x, x - 1);
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//    }
 
     public ArrayList<Match> sortTableDate(ArrayList<Match> matchesArray){
         ArrayList<ArrayList<Match>> toReturn = new ArrayList<>();
