@@ -68,10 +68,11 @@ export class AddMatchComponent implements OnInit {
       this.goal2=0;
     }
 
-    if(Object.keys(this.date).length>0){
-      Swal.fire('Complete Filling', 'All the fields should be filled', 'warning')
+    if(this.clubName1==this.clubName2){
+      Swal.fire('Both are same Clubs', 'Choose two different Clubs', 'warning')
+      this.clubName1 = '';
+      this.clubName2 = '';
     }else{
-
       this.addMatchService.addMatch(this.clubName1,this.clubName2,this.goal1,this.goal2,this.day,this.month,this.year).subscribe((data: any) => {
         if(this.clubName1!=this.clubName2){
           Swal.fire('Match Added', ''
@@ -88,11 +89,14 @@ export class AddMatchComponent implements OnInit {
           this.day = null;
           this.month = null;
           this.year = null;
-        }else if(this.clubName1==this.clubName2){
-          Swal.fire('Both are same Clubs', 'Choose two different Clubs', 'warning')
-          this.clubName1 = '';
-          this.clubName2 = '';
         }
+
+        // else if(this.clubName1==this.clubName2){
+        //   Swal.fire('Both are same Clubs', 'Choose two different Clubs', 'warning')
+        //   this.clubName1 = '';
+        //   this.clubName2 = '';
+        // }
+
       })
     }
 

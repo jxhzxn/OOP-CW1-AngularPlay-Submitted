@@ -6,13 +6,18 @@
 
   margin-top: 50px;
 
-  border-color: black;
-  border-width: 4px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+  border-width: 8px;
   border-style: solid;
   padding-left: 100px;
   padding-right: 100px;
   padding-top: 50px;
   padding-bottom: 50px;
+  border-radius: 15px;
+
+  border-color: #ea7989;
+  background-color: #f5eced;
 }
 
 .item{
