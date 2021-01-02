@@ -9,6 +9,8 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class MatchService {
+
+    //Method to add a Match and Return it as a Set
     public Set<Match> addMatch(String team1Name, String team2Name, int team1Score, int team2Score, Date matchDate){
 
         PremierLeagueManager premierLeagueManager = new PremierLeagueManager();
@@ -54,31 +56,31 @@ public class MatchService {
         }
 
 
-        Match match = new Match(matchDate,team1,team2,team1Score,team2Score);
-        plm.getPlayedMatches().add(match);
+        Match match = new Match(matchDate,team1,team2,team1Score,team2Score);   //creating a new Match
+        plm.getPlayedMatches().add(match);  //adding the created match to the matches array
         plm.saveInstance(plm);
-        return new LinkedHashSet<>(plm.getPlayedMatches());
+        return new LinkedHashSet<>(plm.getPlayedMatches()); //returning all the matches as a LinkedHashSet
     }
 
-    public Set<Match> getAllMatches() {
+    public Set<Match> getAllMatches() { //Method to get all the Matches as a Hash
         PremierLeagueManager premierLeagueManager = new PremierLeagueManager();
         PremierLeagueManager plm = premierLeagueManager.plmCheck();
-        return new LinkedHashSet<>(plm.getPlayedMatches());
+        return new LinkedHashSet<>(plm.getPlayedMatches()); //returning the all the matches as a LinkedHashSet
     }
 
-    public Set<Match> getAllMatchesSorted() {
+    public Set<Match> getAllMatchesSorted() {   //Method to return all the Matches sorted as a Set
         PremierLeagueManager premierLeagueManager = new PremierLeagueManager();
         PremierLeagueManager plm = premierLeagueManager.plmCheck();
         return new LinkedHashSet<>(plm.sortTableDate(plm.getPlayedMatches()));
     }
 
-    public Set<Match> getAllMatchesByDate(int day, int month, int year) {
+    public Set<Match> getAllMatchesByDate(int day, int month, int year) {   //Method to return the Matches played on a specific date
         PremierLeagueManager premierLeagueManager = new PremierLeagueManager();
         PremierLeagueManager plm = premierLeagueManager.plmCheck();
         return new LinkedHashSet<>(plm.getFilteredMatches(day,month,year));
     }
 
-    public Match generateRandomMatch(){
+    public Match generateRandomMatch(){ //method to Generate a random match and return it
         PremierLeagueManager premierLeagueManager = new PremierLeagueManager();
         PremierLeagueManager plm = premierLeagueManager.plmCheck();
         plm.generateRandomMatch();

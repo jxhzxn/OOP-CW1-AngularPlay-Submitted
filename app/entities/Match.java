@@ -9,6 +9,7 @@ public class Match implements Serializable {
     private int team1Score;
     private int team2Score;
 
+    //Constructor of the Match Class
     public Match(Date date, FootballClub team1, FootballClub team2, int team1Score, int team2Score) {
         this.date = date;
         this.team1 = team1;
@@ -17,6 +18,7 @@ public class Match implements Serializable {
         this.team2Score = team2Score;
     }
 
+    //Getters and Setters of the Variables
     public Date getDate() {
         return date;
     }

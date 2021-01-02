@@ -10,6 +10,7 @@ export class PointsTableService {
 
   jxhzxn: string;
 
+  //urls mentioned in the routes file
   private serviceUrl = '/api/summary';
   private dataPostTestUrl = '/api/postTest';
   private createUrl = '/api/createPerson/';
@@ -37,6 +38,7 @@ export class PointsTableService {
     return this.http.post(this.dataPostTestUrl, {});
   }
 
+  //method to create a club
   public createClub(clubName:string, location:string, homeGround:string) : Observable<any> {
     let url = this.createUrl+clubName+'/'+location+'/'+homeGround;
     return this.http.post(url,{});
@@ -46,6 +48,7 @@ export class PointsTableService {
     return this.http.post(this.getNofClubsUrl, {});
   }
 
+  //method to get all the clubs
   public getClub() {
     return this.http.get(this.getClubUrl)
   }

@@ -10,7 +10,6 @@ import {PointsTableService} from '../services/points-table.service';
 export class PointsTableComponent implements OnInit {
 
   clubName:string;
-
   pointsAsc:boolean;
   pointsDes:boolean;
   winsAsc:boolean;
@@ -20,9 +19,11 @@ export class PointsTableComponent implements OnInit {
 
   array = []
 
+  //creating pointsTableService instance
   constructor(private pointsTableService: PointsTableService) { }
 
 
+  //triggering the methods whenever the component loads
   ngOnInit() {
     this.getClub()
     this.pointsAsc=false;
@@ -33,17 +34,16 @@ export class PointsTableComponent implements OnInit {
     this.goalsDes=false;
   }
 
+  //method to get all the clubs
   public getClub(): void{
-    this.pointsTableService.getClub().subscribe((data: any) => {
-      document.getElementById('loading').style.display = 'none';
+    this.pointsTableService.getClub().subscribe((data: any) => {  //triggering the method which is in pointsTableService
+      document.getElementById('loading').style.display = 'none';  //stopping the loader
       this.array = data.response;
-      console.log(Object.keys(data.response))
+      // console.log(Object.keys(data.response))
     })
   }
 
-
-
-
+  //method to sort the table by points in Ascending order
   public sortByPointAsc(){
     if(this.pointsAsc==false){
       this.array.sort(function (a,b){
@@ -54,6 +54,7 @@ export class PointsTableComponent implements OnInit {
     }
   }
 
+  //method to sort the table by points in Descending order
   public sortByPointDes(){
     if(this.pointsDes==false){
       this.array.sort(function (a,b){
@@ -64,6 +65,7 @@ export class PointsTableComponent implements OnInit {
     }
   }
 
+  //method to sort the table by wins in Ascending order
   public sortByWinsAsc(){
     if(this.winsAsc==false){
       this.array.sort(function (a,b){
@@ -74,6 +76,7 @@ export class PointsTableComponent implements OnInit {
     }
   }
 
+  //method to sort the table by wins in Descending order
   public sortByWinsDes(){
     if(this.winsDes==false){
       this.array.sort(function (a,b){
@@ -84,6 +87,7 @@ export class PointsTableComponent implements OnInit {
     }
   }
 
+  //method to sort the table by goals in Ascending order
   public sortByGoalsAsc(){
     if(this.goalsAsc==false){
       this.array.sort(function (a,b){
@@ -94,6 +98,7 @@ export class PointsTableComponent implements OnInit {
     }
   }
 
+  //method to sort the table by goals in Descending order
   public sortByGoalsDes(){
     if(this.goalsDes==false){
       this.array.sort(function (a,b){
@@ -103,8 +108,6 @@ export class PointsTableComponent implements OnInit {
       this.getClub()
     }
   }
-
-
 
 
 }

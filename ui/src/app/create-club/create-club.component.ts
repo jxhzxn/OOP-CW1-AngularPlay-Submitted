@@ -17,30 +17,31 @@ export class CreateClubComponent implements OnInit{
   nof_clubs : number;
   clubArray = [];
 
+  //creating an instance of appService
   constructor(private appService: AppService) {
     this.appService.getWelcomeMessage().subscribe((data: any) => {
       this.title = data.content;
     });
   }
 
+  //triggering the methods whenever the component loads
   ngOnInit() {
     this.clubCheck()
   }
 
-  /**
-   * This method is used to test the post request
-   */
+
   public postData(): void {
     this.appService.sendData().subscribe((data: any) => {
       this.postRequestResponse = data.content;
     });
   }
 
+  //method to create a Club
   public createClub(): void{
     for(var x=0; x<=this.clubArray.length-1; x++){
       console.log(this.clubArray[x].clubName)
-      if(this.clubArray[x].clubName==this.clubName){
-        Swal.fire('"'+this.clubName+'" is Already Added', '', 'warning');
+      if(this.clubArray[x].clubName==this.clubName){  //checking whether a club already exists with the same name
+        Swal.fire('"'+this.clubName+'" is Already Added', '', 'warning'); //triggering swalFire
         this.homeGround = '';
         this.location = '';
         this.clubName = '';
@@ -48,7 +49,7 @@ export class CreateClubComponent implements OnInit{
       }
     }
     if(this.clubName!=null && this.location!=null && this.homeGround!=null){
-      this.appService.createClub(this.clubName,this.location,this.homeGround).subscribe((data: any) => {
+      this.appService.createClub(this.clubName,this.location,this.homeGround).subscribe((data: any) => {  //triggering the createClub method of appService
         this.postRequestResponse = data.content;
         Swal.fire('Club Created', ''
           // +

@@ -3,7 +3,7 @@ package entities;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class FootballClub extends SportsClub implements Serializable {
+public class FootballClub extends SportsClub implements Serializable {  //Implementing to Serializable to make it able to save the Instance
     private String homeGround;
     private int nofMatches;
     private int nofGoalsScored;
@@ -13,11 +13,10 @@ public class FootballClub extends SportsClub implements Serializable {
     private int nofDefeats;
     private int nofPoints;
 
-
-
     public FootballClub(){
     }
 
+    //Constructor of the FootballClub Class
     public FootballClub(String location, String clubName, String homeGround, int nofWins, int nofDraws, int nofDefeats, int nofGoalsReceived, int nofGoalsScored, int nofPoints, int nofMatches) {
         super(clubName, location);
         this.homeGround = homeGround;

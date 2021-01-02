@@ -26,9 +26,7 @@
       <div class="container-inside">
         <div class="box1">
           <div class="box-inside">
-<!--            <input type="text" placeholder="Club Name" class="input-name" [(ngModel)]="clubName1">-->
 
-<!--            <div class="clubInput">-->
             <mat-form-field class="test" appearance="fill">
               <mat-label class="datePickerHead">Choose Club</mat-label>
               <mat-select [(ngModel)]="clubName1" class="input-name">
@@ -37,10 +35,7 @@
                 </mat-option>
               </mat-select>
             </mat-form-field>
-<!--            </div>-->
 
-
-<!--            <input type="number" placeholder="Goals" class="input-goal" [(ngModel)]="goal1">-->
             <mat-form-field class="example-full-width input-goal-mat">
               <mat-label>Goals</mat-label>
               <input type="number" matInput placeholder="Goals" [(ngModel)]="goal1">
@@ -52,9 +47,8 @@
         </div>
         <div class="box3">
           <div class="box-inside">
-<!--            <input type="text" placeholder="Club Name" class="input-name" [(ngModel)]="clubName2">-->
 
-<!--            <div class="clubInput">-->
+
               <mat-form-field class="test" appearance="fill">
                 <mat-label class="datePickerHead">Choose Club</mat-label>
                 <mat-select [(ngModel)]="clubName2" class="input-name">
@@ -63,9 +57,9 @@
                   </mat-option>
                 </mat-select>
               </mat-form-field>
-<!--            </div>-->
 
-<!--            <input type="number" placeholder="Goals" class="input-goal" [(ngModel)]="goal2">-->
+
+
             <mat-form-field class="example-full-width input-goal-mat">
               <mat-label>Goals</mat-label>
               <input type="number" matInput placeholder="Goals" [(ngModel)]="goal2">
@@ -76,32 +70,9 @@
       <div class="btnContainer">
         <button [ngClass]="{'not-active': clubName1.length==0 || clubName2.length==0 || goal1==null || goal2==null, 'addBtn': clubName1.length!=0 && clubName2.length!=0 && goal1!=null && goal2!=null}" (click)="addMatch()">Add Match</button>
 
-<!--        <button (click)="addMatch()">Add Match</button>-->
       </div>
       <button class="addBtn" (click)="generateMatch()">Generate Match</button>
     </div>
 
   </div>
 </div>
-
-
-<!--<mat-form-field>-->
-<!--  <mat-label>Match Played Date</mat-label>-->
-<!--  <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="datepicker" disabled>-->
-<!--  <mat-datepicker-toggle [for]="datepicker" matSuffix></mat-datepicker-toggle>-->
-<!--  <mat-datepicker #datepicker></mat-datepicker>-->
-<!--</mat-form-field>-->
-
-<!--<mat-form-field appearance="fill">-->
-<!--  <mat-label>Match Played Date</mat-label>-->
-<!--  <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="dp"  [(ngModel)]="date" disabled>-->
-<!--  <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>-->
-<!--  <mat-datepicker #dp disabled="false"></mat-datepicker>-->
-<!--</mat-form-field>-->
-
-<!--<button (click)="click()">Test</button>-->
-
-
-
-
-<!--*ngIf="clubName1!=null && clubName2!=null"-->

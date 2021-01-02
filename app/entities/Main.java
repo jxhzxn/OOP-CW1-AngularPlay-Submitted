@@ -10,16 +10,12 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-
-        //to test commit
-
         Scanner input = new Scanner(System.in);
 
+        PremierLeagueManager premierLeagueManager = new PremierLeagueManager(); //Creating a new PLM instance
+        PremierLeagueManager plm = premierLeagueManager.plmCheck(); //getting the last instance of PLM
 
-        PremierLeagueManager premierLeagueManager = new PremierLeagueManager();
-        PremierLeagueManager plm = premierLeagueManager.plmCheck();
-
-        plm.consoleRun();
+        plm.consoleRun();   //making the console run
 
         int option = 9;
 
@@ -100,19 +96,7 @@ public class Main {
                     plm.saveInstance(plm);
                     System.exit(1);
                 }else if(option==6){
-//                    String command = "sbt run";
-//                    try {
-//                        Process poc = Runtime.getRuntime().exec(command);
-//                        BufferedReader reader = new BufferedReader(new InputStreamReader(poc.getInputStream()));
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-//                    System.out.println("");
-//                    System.out.print("Opening the GUI in Browser");
-//                    System.out.print(".");
-//                    System.out.print(".");
-//                    System.out.print(".");
-//                    System.out.println("");
+                    System.out.println("type 'SBT RUN' on the terminal to trigger the Angular GUI");
                 }
                 if(plm.decide().equals("x")){
                     plm = premierLeagueManager.plmCheck();
